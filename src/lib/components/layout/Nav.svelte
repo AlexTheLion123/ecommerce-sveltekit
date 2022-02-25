@@ -7,7 +7,6 @@
 		{ heading: 'Merch', items: ['grinders', 'clothing'] }
 	];
 
-	console.log($page);
 </script>
 
 <nav>
@@ -32,7 +31,7 @@
 							<div class="inner-nav-link">
 								<i
 									class="fab fa-instagram-square"
-									class:selected-icon={$page.url.pathname == '/' + section.heading + '/' + item}
+									class:selected-icon={$page.url.pathname == '/' + section.heading.toLowerCase() + '/' + item}
 								/>{item}
 							</div>
 						</a>
@@ -45,26 +44,26 @@
 
 <style lang="scss">
 	$border: 0.5px solid rgba(128, 128, 128, 0.3);
-	$light-blue: rgba(0, 255, 234, 0.959);
-	$light-grey: rgba(142, 159, 161, 0.329);
-	$icon-color: rgba(255, 255, 255, 0.794);
-	$icon-color-selected: rgba(0, 255, 234, 0.959);
-	$normal-color: rgb(149, 149, 149);
+	$heading-color: #eae9daff;
+	$selected-color: #eae9daff;
+	$selected-background: rgba(142, 159, 161, 0.329);
+	$icon-color: #a8b3cfff;
+	$icon-color-selected: #eae9daff;
+	$normal-color: #a8b3cfff;
+	$nav-background: rgb(20, 20, 20);
 
 	#home-link {
 		border-radius: 0;
+		height: 3rem;
+		
+		display: grid;
+		align-items: center;
 	}
 
 	.selected {
-		background: $light-grey;
-		color: $light-blue;
-		border-radius: 5px;
+		background: $selected-background;
+		color: $selected-color;
 	}
-
-	.section-container {
-		padding: 0 0.5rem;
-	}
-
 
 	.selected-icon {
 		color: $icon-color-selected;
@@ -73,13 +72,12 @@
 	.nav-heading {
 		margin-bottom: 1rem;
 		padding-left: 1rem;
-		color: $light-blue;
+		color: $heading-color;
 	}
 
 	nav {
 		height: 100%;
 		border-right: $border;
-
 		ul {
 			list-style: none;
 

@@ -16,7 +16,7 @@
 	<main>
 		{#each items as item, i}
 			<div class="item">
-				<WeedItem strain={item.strain + ' ' + i} description={item.description} price={Math.round(Math.random()*1000)} stars={Math.ceil(Math.random()*5)}/>
+				<WeedItem strain={item.strain + ' ' + i} description={item.description} price={Math.round(Math.random()*1000)} stars={Math.ceil(Math.random()*5)} imgSrc={"/src/lib/assets/images/greenhouse/bigstock-Marijuana.jpg"}/>
 			</div>
 		{/each}
 	

@@ -3,6 +3,7 @@
 	export let description;
 	export let stars: number;
 	export let price;
+	export let imgSrc;
 
 	let randomColorGenerator = (function () {
 		let i = 0;
@@ -12,28 +13,32 @@
 </script>
 
 <main>
-	<header>
-		{strain}
-	</header>
-	<div class="image">
-		<img src="/src/lib/assets/images/Cannabis_leaf.svg.png" alt="" />
-	</div>
-	<div class="starsi">
-		{#each new Array(stars) as stars}
-			<div class="star" />
-		{/each}
-	</div>
-	<div class="price">
-		R {price}
-	</div>
-	<div class="description">
-		{description}
-	</div>
+	<section class="image">
+		<img src={imgSrc} alt="" />
+	</section>
+	<section class="content">
+		<header>
+			{strain}
+		</header>
+		<div class="description">
+			{description}
+		</div>
+		<footer>
+			<div class="price">
+				R {price}
+			</div>
+			<div class="reviews">
+				{#each new Array(stars) as stars}
+					<div class="star" />
+				{/each}
+			</div>
+		</footer>
+	</section>
 </main>
 
 <style lang="scss">
 	$item-border: 1px solid grey;
-	$background: #202224ff;
+	$background: rgb(39, 42, 44);
 	$price-color: #beb24fff;
 	$description-color: rgba(155, 155, 155, 0.658);
     $star-color: rgb(197, 246, 82);
@@ -46,7 +51,7 @@
         box-shadow: 0 0 15px $star-color;
 	}
 
-	.starsi {
+	.reviews {
 		display: flex;
 		gap: 0.5rem;
 		justify-content: center;
@@ -57,9 +62,12 @@
 		color: grey;
 	}
 
-	.image {
-		display: grid;
-		place-items: center;
+	footer {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	img {
 		width: 100%;
 	}
 
@@ -81,15 +89,18 @@
 	img {
 		height: 10rem;
 	}
-
+	
 	main {
+		overflow: hidden;
 		width: 15rem;
-		padding: 1rem;
 		border-radius: 5px;
-		text-align: center;
 		background: $background;
+	}
+
+	.content {
+		padding: 1rem;
 
 		display: grid;
-		grid-template-rows: 1fr 4fr 1fr 1fr;
+		grid-template-rows: 1.5fr 4fr 2fr;
 	}
 </style>
