@@ -1,4 +1,6 @@
 <script lang="ts">
+	import CountdownTimer from './CountdownTimer.svelte';
+
 	export let strain;
 	export let description;
 	export let stars: number;
@@ -9,24 +11,6 @@
 	export let special: number;
 
 	const isSpecial = deadline > new Date() && special;
-	
-	let timeLeft;
-	if(isSpecial) {
-		setInterval(() => timeLeft = countdownWrapper(deadline, new Date()), 1000)
-	}
-
-	function diffDateSeconds(date1: Date, date2: Date) {
-		return (date1.getTime() - date2.getTime())/1000
-	}
-
-	function convertTimeLeft(seconds: number) {
-		
-		return (new Date(seconds * 1000).toISOString()).substring(11, 19);
-	}
-
-	function countdownWrapper(date1: Date, date2: Date) {
-		return convertTimeLeft(diffDateSeconds(date1, date2))
-	}
 </script>
 
 <main class:special={isSpecial}>
@@ -40,7 +24,7 @@
 			</div>
 			{#if isSpecial}
 				<div class="countdown">
-					{timeLeft}
+					<CountdownTimer {deadline}/>
 				</div>
 			{/if}
 		</header>
@@ -48,11 +32,13 @@
 			{description}
 		</div>
 		<footer>
-			<div class="price">
+			<div class="price-container">
 				{#if deadline > new Date() && special}
 					<div class="on-special">
-						<s><span class="old-price">R {price}</span></s>
-						<div>R {Math.round(price * (1 - special / 100))}</div>
+						<div class="old-price-container">
+							<s><span class="old-price">R {price}</span></s> <span class="percentage-off">-{special}%</span>
+						</div>
+						<div class="new-price">R {Math.round(price * (1 - special / 100))}</div>
 					</div>
 				{:else}
 					<div class="no-special">
@@ -86,10 +72,6 @@
 		box-shadow: 0 0 15px $star-color;
 	}
 
-	.old-price {
-		font-size: 1rem;
-	}
-
 	.reviews {
 		justify-content: center;
 		align-items: center;
@@ -103,6 +85,11 @@
 
 	.numReviews {
 		font-size: 0.8rem;
+	}
+
+	.percentage-off {
+		margin-left: 0.3rem;
+		color: rgba(255, 255, 0, 0.835);
 	}
 
 	header {
@@ -129,9 +116,8 @@
 		background: $stars-background;
 	}
 
-	.price {
+	.price-container {
 		color: $price-color;
-		font-size: 1.5rem;
 		align-self: end;
 	}
 
@@ -139,6 +125,11 @@
 		color: $description-color;
 		font-size: 0.8rem;
 	}
+
+	.no-special, .new-price {
+		font-size: 1.5rem;
+	}
+
 
 	img {
 		height: 10rem;
