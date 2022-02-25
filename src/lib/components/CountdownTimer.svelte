@@ -1,9 +1,14 @@
 <script lang="ts">
-	export let deadline;
-	import { fly } from 'svelte/transition';
+	import { onDestroy } from 'svelte';
+	import CountdownUnit from './CountdownUnit.svelte';
 
-	let hours, minutes, tens, units;
-	setInterval(() => ([hours, minutes, tens, units] = countdownWrapper(deadline, new Date())), 1000);
+	export let deadline;
+
+	let hours, minutes, seconds;
+	const myInterval = setInterval(() => {
+		console.log('hi');
+		return ([hours, minutes, seconds] = countdownWrapper(deadline, new Date()));
+	}, 1000);
 
 	function diffDateSeconds(date1: Date, date2: Date) {
 		return (date1.getTime() - date2.getTime()) / 1000;
@@ -15,36 +20,36 @@
 
 	function countdownWrapper(date1: Date, date2: Date) {
 		const _timeLeft = convertTimeLeft(diffDateSeconds(date1, date2));
-		const units = _timeLeft.substring(7, 8);
-		const tens = _timeLeft.substring(6, 7);
+		const seconds = _timeLeft.substring(6, 8);
 		const minutes = _timeLeft.substring(3, 5);
 		const hours = _timeLeft.substring(0, 2);
 
-		return [hours, minutes, tens, units];
+		return [hours, minutes, seconds];
 	}
+
+	onDestroy(() => clearInterval(myInterval));
 </script>
 
-<main>
-	{#if hours && minutes && tens && units}
-		{#key hours}
-			<div in:fly={{ y: -20 }} out:fly={{ y: 20 }}>{hours}</div>
-			:
-		{/key}
-		{#key minutes}
-			<div in:fly={{ y: -20 }} out:fly={{ y: +20 }}>{minutes}</div>
-			:
-		{/key}
-		{#key tens}
-			<div in:fly={{ x: 0, y: -20 }} out:fly={{ y: +20 }}>{tens}</div>
-		{/key}
-		{#key units}
-			<div in:fly={{ x: 0, y: -20 }} out:fly={{ x: 0, y: +20 }}>{units}</div>
-		{/key}
-	{/if}
-</main>
+{#if hours && minutes && seconds}
+	<main>
+		<div class="hours">
+			<CountdownUnit value={hours} />
+		</div>
+		<div>:</div>
+		<div class="minutes">
+			<CountdownUnit value={minutes} />
+		</div>
+		<div>:</div>
+
+		<div class="seconds">
+			<CountdownUnit value={seconds} />
+		</div>
+	</main>
+{/if}
 
 <style>
 	main {
 		display: flex;
+		flex-direction: space-between;
 	}
 </style>
