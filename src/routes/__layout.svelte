@@ -28,12 +28,13 @@
 <style lang="scss">
 	$border: 0.5px solid rgba(128, 128, 128, 0.3);
     $max-width: 1500px;
-
+	$main-background: rgb(50, 53, 56);
+	$header-background: rgb(50,53,58);
 	header {
 		height: 3rem;
 		width: 100%;
 		border-bottom: $border;
-
+		background: $header-background;
 		display: grid;
 		align-items: center;
         place-items: center;
@@ -82,6 +83,6 @@
 
 	:global(body) {
 		font-family: Ubuntu, Arial, sans-serif;
-		background: #181a1cff;
+		background: $main-background;
 	}
 </style>

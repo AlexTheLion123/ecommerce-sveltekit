@@ -45,7 +45,7 @@
 <style lang="scss">
 	$border: 0.5px solid rgba(128, 128, 128, 0.3);
 	$selected-background: rgba(142, 159, 161, 0.329);
-	$nav-background: rgb(20, 20, 20);
+	$nav-background: rgb(50, 53, 58);
 	
 	$selected-color: rgb(245, 244, 237);
 	$icon-color-selected: rgb(245, 244, 237);
@@ -66,6 +66,7 @@
 	.selected {
 		background: $selected-background;
 		color: $selected-color;
+		font-weight: 800;
 	}
 
 	.selected-icon {
@@ -81,6 +82,7 @@
 	nav {
 		height: 100%;
 		border-right: $border;
+		background: $nav-background;
 		ul {
 			list-style: none;
 
