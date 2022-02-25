@@ -2,13 +2,19 @@
 	import WeedItem from '$lib/components/WeedItem.svelte';
 
 	const items = [
-		{ strain: 'Hello', description: 'sdklfjslf sfj sdlkfjs flksjdf slkfj sdlfk', price: '1000' },
-		{ strain: 'Hello', description: 'sdklfjslf sfj sdlkfjs flksjdf slkfj sdlfk', price: '1000' },
-		{ strain: 'Hello', description: 'sdklfjslf sfj sdlkfjs flksjdf slkfj sdlfk', price: '1000' },
-		{ strain: 'Hello', description: 'sdklfjslf sfj sdlkfjs flksjdf slkfj sdlfk', price: '1000' },
-		{ strain: 'Hello', description: 'sdklfjslf sfj sdlkfjs flksjdf slkfj sdlfk', price: '1000' },
-		{ strain: 'Hello', description: 'sdklfjslf sfj sdlkfjs flksjdf slkfj sdlfk', price: '1000' },
-		{ strain: 'Hello', description: 'sdklfjslf sfj sdlkfjs flksjdf slkfj sdlfk', price: '1000' }
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
+		{ strain: 'Title', description: 'This is the item description bla bla bla bla bla', price: Math.round(Math.random()*1000), stars: Math.ceil(Math.random()*5), imgSrc: "/src/lib/assets/images/greenhouse/bud2.jpeg"},
 	];
 </script>
 
@@ -16,7 +22,7 @@
 	<main>
 		{#each items as item, i}
 			<div class="item">
-				<WeedItem strain={item.strain + ' ' + i} description={item.description} price={Math.round(Math.random()*1000)} stars={Math.ceil(Math.random()*5)} imgSrc={"/src/lib/assets/images/greenhouse/bigstock-Marijuana.jpg"}/>
+				<WeedItem strain={item.strain + ' ' + i} description={item.description} price={item.price} stars={item.stars} imgSrc={item.imgSrc}/>
 			</div>
 		{/each}
 	

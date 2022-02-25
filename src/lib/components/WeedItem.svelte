@@ -39,9 +39,9 @@
 <style lang="scss">
 	$item-border: 1px solid grey;
 	$background: rgb(39, 42, 44);
-	$price-color: #beb24fff;
+	$price-color: rgba(192, 178, 178, 0.979);
 	$description-color: rgba(155, 155, 155, 0.658);
-    $star-color: rgb(197, 246, 82);
+    $star-color: rgb(234, 1, 255);
 
 	.star {
 		height: 0.5rem;
@@ -95,12 +95,18 @@
 		width: 15rem;
 		border-radius: 5px;
 		background: $background;
+		border: 1px solid rgba(255, 255, 255, 0);
+	}
+
+	main:hover {
+		cursor: pointer;
+		border: 1px solid rgba(255, 255, 255, 0.233);
 	}
 
 	.content {
 		padding: 1rem;
 
 		display: grid;
-		grid-template-rows: 1.5fr 4fr 2fr;
+		grid-template-rows: 2fr 4fr 2fr;
 	}
 </style>

@@ -44,13 +44,16 @@
 
 <style lang="scss">
 	$border: 0.5px solid rgba(128, 128, 128, 0.3);
-	$heading-color: #eae9daff;
-	$selected-color: #eae9daff;
 	$selected-background: rgba(142, 159, 161, 0.329);
-	$icon-color: #a8b3cfff;
-	$icon-color-selected: #eae9daff;
-	$normal-color: #a8b3cfff;
 	$nav-background: rgb(20, 20, 20);
+	
+	$selected-color: rgb(245, 244, 237);
+	$icon-color-selected: rgb(245, 244, 237);
+	$heading-color: rgb(245, 244, 237);
+	
+	$icon-color: rgb(185, 182, 182);
+	$normal-color: rgb(185, 182, 182);
+	
 
 	#home-link {
 		border-radius: 0;
