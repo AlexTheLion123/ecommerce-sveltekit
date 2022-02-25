@@ -55,8 +55,6 @@
 		}
 	}
 
-	
-
 	.container {
 		display: flex;
 		justify-content: center;
