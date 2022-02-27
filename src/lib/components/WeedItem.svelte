@@ -140,7 +140,7 @@
 		width: 15rem;
 		border-radius: 5px;
 		background: $background;
-		border: 1px solid rgba(255, 255, 255, 0);
+		border: 1px solid transparent;
 
 		box-shadow: 0 0 8px grey;
 	}

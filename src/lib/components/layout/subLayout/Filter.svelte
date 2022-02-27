@@ -33,8 +33,7 @@
     }
 
     .name {
-        border: 1px solid rgba(137, 138, 132, 0.972);
-        border-radius: $border-radius;
+        
         padding: 0.5rem;
 	}
     
@@ -43,6 +42,8 @@
     }
 
     .selected {
+        border: 1.5px solid rgba(137, 138, 132, 0.972);
+        border-radius: $border-radius;
     }
 
 </style>
