@@ -147,11 +147,16 @@ import { startOfMinute } from 'date-fns';
 
 	header {
 		justify-self: start;
-		height: 5rem;
 
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+	}
+
+	.filter {
+		margin-top: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.7rem;
 	}
 
 	main {

@@ -23,9 +23,9 @@
     
     input {
         all:unset;
-        width: 30rem;
+        width: 25rem;
         height: 2rem;
-        background: white;
+        background: rgb(231, 231, 231);
         color: black;
         border-radius: $border-radius 0 0 $border-radius;
         border: 1px solid black;
@@ -43,6 +43,7 @@
         font-weight: 700;
         text-align: center;
         color: rgb(59, 59, 59);
+        border: none;
     }
 
     select:hover {
