@@ -1,6 +1,6 @@
 <script>
-	export let totalAmount = 1;
-	export let numItems = 0;
+	export let totalAmount = 654;
+	export let numItems = 3;
 </script>
 
 <main>

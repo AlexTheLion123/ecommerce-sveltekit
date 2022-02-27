@@ -1,6 +1,8 @@
 <script lang="ts">
 	import WeedItem from '$lib/components/WeedItem.svelte';
 	import SearchBar from '$lib/components/layout/subLayout/SearchBar.svelte';
+	import Filter from '$lib/components/layout/subLayout/Filter.svelte';
+import { startOfMinute } from 'date-fns';
 
 	const items = [
 		{
@@ -9,7 +11,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('2/26/22'),
 			special: 10
 		},
@@ -19,7 +21,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('2/29/22'),
 			special: 15
 		},
@@ -29,7 +31,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('1/26/22'),
 			special: 0
 		},
@@ -39,7 +41,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('1/26/22'),
 			special: 0
 		},
@@ -49,7 +51,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('1/26/22'),
 			special: 0
 		},
@@ -59,7 +61,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('1/26/22'),
 			special: 0
 		},
@@ -69,7 +71,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('1/26/22'),
 			special: 0
 		},
@@ -79,7 +81,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('1/26/22'),
 			special: 0
 		},
@@ -89,7 +91,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('1/26/22'),
 			special: 0
 		},
@@ -99,7 +101,7 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('1/26/22'),
 			special: 0
 		},
@@ -109,16 +111,23 @@
 			price: Math.round(Math.random() * 1000),
 			stars: Math.round(Math.random() * 100) / 10,
 			numReviews: Math.round(Math.random() * 1000),
-			imgSrc: '/src/lib/assets/images/greenhouse/bud2.jpeg',
+			imgSrc: '/src/lib/assets/images/greenhouse/Blunicorn.jpg',
 			deadline: new Date('1/26/22'),
 			special: 0
 		}
 	];
+
+	const filters = [{name: 'strain', categories: ['sativa','indica','bazooka', 'house']}]
 </script>
 
 <div class="wrapper">
 	<header>
-		<SearchBar />
+		<div class="search-bar">
+			<SearchBar />
+		</div>
+		<div class="filter">
+			<Filter {filters}/>
+		</div>
 	</header>
 	<main>
 		{#each items as item, i}
@@ -138,6 +147,11 @@
 
 	header {
 		justify-self: start;
+		height: 5rem;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	main {
