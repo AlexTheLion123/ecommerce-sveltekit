@@ -24,7 +24,7 @@
 	<main>
 		{#each items as item, i}
 			<div class="item">
-				<WeedItem strain={item.strain + ' ' + i} description={item.description} price={item.price} stars={item.stars} imgSrc={item.imgSrc} deadline={item.deadline} numReviews={item.numReviews} special={item.special}/>
+				<WeedItem {...item}/>
 			</div>
 		{/each}
 	

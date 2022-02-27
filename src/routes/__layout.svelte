@@ -1,21 +1,22 @@
 <script>
-    import Nav from '$lib/components/layout/Nav.svelte';
-	
+	import Nav from '$lib/components/layout/Nav.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
 </script>
 
 <svelte:head
 	><script src="https://kit.fontawesome.com/30f595e84f.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </svelte:head>
 
 <header>
-    <div class="header-container">
-        <div class="title">Name of biz</div>
-    </div>
+	<Header />
 </header>
 
 <div class="container">
 	<div class="main-wrapper">
-		<Nav/>
+		<Nav />
 		<!-- <div class="img-wrapper">
 			<img src="src/images/weed_symbol.svg" alt="" id="weed-nav-symbol" />
 		</div> -->
@@ -27,22 +28,16 @@
 
 <style lang="scss">
 	$border: 0.5px solid rgba(128, 128, 128, 0.3);
-    $max-width: 1500px;
+	$max-width: 1500px;
 	$main-background: rgb(50, 53, 56);
-	$header-background: rgb(50,53,58);
 	header {
-		height: 3rem;
-		width: 100%;
+		height: 4rem;
 		border-bottom: $border;
-		background: $header-background;
-		display: grid;
-		align-items: center;
-        place-items: center;
 	}
 
-    .header-container {
-        justify-self: left;
-    }
+	.header-container {
+		justify-self: left;
+	}
 
 	.img-wrapper {
 		position: absolute;
@@ -68,7 +63,7 @@
 	}
 
 	:root {
-		font-family: 'Inter', sans-serif;
+		font-family: 'Nunito', sans-serif;
 		font-weight: 500;
 		color: white;
 	}

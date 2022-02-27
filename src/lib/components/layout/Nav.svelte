@@ -12,9 +12,9 @@
 <nav>
 	<ul>
 		<section class="home">
-			<a href="/" class:selected={$page.url.pathname == '/'} id="home-link">
+			<a href="/" class:selected={$page.url.pathname === '/'} id="home-link">
 				<div class="inner-nav-link">
-					<i class="fab fa-instagram-square" class:selected-icon={$page.url.pathname == '/'} />Home
+					<i class="fab fa-instagram-square" class:selected-icon={$page.url.pathname === '/'} />Home
 				</div>
 			</a>
 		</section>
@@ -25,13 +25,13 @@
 					{#each section.items as item}
 						<a
 							href={'/' + section.heading.toLowerCase() + '/' + item}
-							class:selected={$page.url.pathname == '/' + section.heading.toLowerCase() + '/' + item}
+							class:selected={$page.url.pathname.includes(item)}
 							
 						>
 							<div class="inner-nav-link">
 								<i
 									class="fab fa-instagram-square"
-									class:selected-icon={$page.url.pathname == '/' + section.heading.toLowerCase() + '/' + item}
+									class:selected-icon={$page.url.pathname.includes(item)}
 								/>{item}
 							</div>
 						</a>

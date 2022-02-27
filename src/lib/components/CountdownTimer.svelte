@@ -25,7 +25,7 @@
 	<main>
 		{#if days}
 			<div class="days">
-				<CountdownUnit value={days} />
+				<CountdownUnit value={days} transform={false}/>
 			</div>
 			<div class="days-word">days</div>
 		{/if}
