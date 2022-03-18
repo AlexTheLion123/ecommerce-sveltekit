@@ -5,6 +5,7 @@
 
     export let name: string;
     export let categories: string[];
+    export let filterName: string;
 
     const selectedArr = new Array(categories.length).fill(false)
     let nameSelected = true;
@@ -16,6 +17,8 @@
         for(let i=0; i<selectedArr.length; i++){
             selectedArr[i] = false
         }
+
+        dispatch('filterClick', {category: 'all', filterName: `${filterName}`})
     }
 
     function filterClick(index: number) {
@@ -26,6 +29,8 @@
         }
 
         selectedArr[index] = true
+
+        dispatch('filterClick', {category: `${categories[index]}`, filterName: `${filterName}`})
     }
 
 </script>

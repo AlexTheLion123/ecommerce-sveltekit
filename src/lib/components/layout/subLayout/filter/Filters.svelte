@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Filter from './Filter.svelte'
 
-	export let filters: { name: string; categories: string[] }[];
+	export let filters: { name: string; filterName: string; categories: string[] }[];
 
 </script>
 
 {#each filters as filter}
-	<Filter name={filter.name} categories={filter.categories}/>
+	<Filter {...filter} on:filterClick/>
 {/each}
 
 
