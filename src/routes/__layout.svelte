@@ -36,20 +36,6 @@
 		border-bottom: $border;
 	}
 
-	.header-container {
-		justify-self: left;
-	}
-
-	.img-wrapper {
-		position: absolute;
-		width: 100%;
-		text-align: center;
-		top: 0.2rem;
-
-		#weed-nav-symbol {
-			width: 5rem;
-		}
-	}
 
 	.container {
 		display: flex;

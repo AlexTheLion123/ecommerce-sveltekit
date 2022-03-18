@@ -3,7 +3,7 @@
 </script>
 
 <header class="header-container">
-	<h1>Top Shelf</h1>
+	<h1>TopShelf</h1>
     <div class="cart-container">
         <Cart/>
     </div>
