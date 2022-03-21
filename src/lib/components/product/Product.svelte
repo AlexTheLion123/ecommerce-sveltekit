@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {isBefore} from 'date-fns'
+    import Price from './Price.svelte'
 
     export let title;
     export let imgSrc;
@@ -26,7 +26,7 @@
         <section class="description">{description}</section>
     
         <footer>
-            <div class="price">R {price}</div>
+            <div class="price"><Price {price} {discount} {isSpecial}/></div>
             <div class="reviews-container">
                 <div class="num-reviews">Reviews: {numReviews}</div>
                 <div class="ave-reviews">{aveReviews}</div>
@@ -56,7 +56,12 @@
     }
 
     .isSpecial {
-        border: 1px solid purple;
+        border: 1px solid rgba(221, 69, 221, 0.507);
+        box-shadow: 0 0 8px #dc45ddff;
+    }
+
+    .isSpecial:hover {
+        border: 1px solid #dc45ddff;
     }
 
     content {
@@ -83,7 +88,6 @@
     }
 
     .price {
-        font-size: 1.5rem;
         align-self: flex-end;
     }
 
