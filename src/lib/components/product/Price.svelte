@@ -22,6 +22,7 @@
 <style>
     main {
         font-size: 1.5rem;
+        color: #d7ccccff;
     }
 
     .top {
