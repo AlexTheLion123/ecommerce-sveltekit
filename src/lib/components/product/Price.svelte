@@ -13,7 +13,7 @@
             <div class="percent-off">-{discount}%</div>
         </div>
         <div class="bottom">
-            R {Math.round(price*(discount/100))}
+            R {Math.round(price*(1-discount/100))}
 
         </div>
     {/if}

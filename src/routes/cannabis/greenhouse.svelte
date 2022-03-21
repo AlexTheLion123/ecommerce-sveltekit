@@ -18,6 +18,8 @@
 
 	export let products;
 
+    let filtered = products;
+
 	const filters = [
 		{
 			name: 'All strains',
@@ -25,6 +27,19 @@
 			categories: ['sativa', 'indica', 'afghan', 'house']
 		}
 	];
+
+    function filterClick(event) {
+        console.log(event.detail)
+        if(event.detail.category === 'all') {
+            filtered = products
+            return
+        }
+
+        filtered = products.filter(item => {
+            return item[event.detail.filterName] === event.detail.category
+        })
+
+    }
 </script>
 
 <main>
@@ -33,11 +48,11 @@
 	</div>
 
 	<div class="filter">
-		<Filters {filters} />
+		<Filters {filters} on:filterClick={filterClick}/>
 	</div>
 
 	<content>
-		{#each products as product}
+		{#each filtered as product}
 			<Product {...product} />
 		{/each}
 	</content>
