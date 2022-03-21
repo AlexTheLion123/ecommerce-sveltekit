@@ -10,9 +10,15 @@
 	export let description;
 	export let numReviews;
 	export let aveReviews;
+	export let strain;
 
-	const deadline = new Date(discountDeadline);
-	const isSpecial = new Date() < deadline;
+	let deadline;
+	let isSpecial;
+
+	$: {
+		deadline = new Date(discountDeadline);
+		isSpecial = new Date() < deadline;
+	}
 </script>
 
 <main class:isSpecial>
@@ -21,10 +27,10 @@
 	<content>
 		<section class="title-timer">
 			<section class="title">{title}</section>
-            {#if isSpecial}
-			<section class="timer"><Timer {deadline}/></section>
-            {/if}
-        </section>
+			{#if isSpecial}
+				<section class="timer"><Timer {deadline} /></section>
+			{/if}
+		</section>
 		<section class="description">{description}</section>
 
 		<footer>
@@ -35,6 +41,8 @@
 			</div>
 		</footer>
 	</content>
+
+	{strain}
 </main>
 
 <style>
@@ -65,10 +73,10 @@
 	.isSpecial:hover {
 		border: 1px solid #dc45ddff;
 	}
-    img {
-        height: 100%;
-        width: 100%;
-    }
+	img {
+		height: 100%;
+		width: 100%;
+	}
 
 	content {
 		padding: 0.5rem;
@@ -78,10 +86,10 @@
 		align-items: center;
 	}
 
-    .title-timer {
-        display: flex;
-        justify-content: space-between;
-    }
+	.title-timer {
+		display: flex;
+		justify-content: space-between;
+	}
 
 	.description {
 		font-size: 0.7rem;
