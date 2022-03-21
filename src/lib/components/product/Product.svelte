@@ -57,7 +57,7 @@
 
     .isSpecial {
         border: 1px solid rgba(221, 69, 221, 0.507);
-        box-shadow: 0 0 8px #dc45ddff;
+        box-shadow: 0 0 5px #dc45ddff;
     }
 
     .isSpecial:hover {
