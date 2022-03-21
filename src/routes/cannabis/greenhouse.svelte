@@ -29,7 +29,6 @@
 	];
 
     function filterClick(event) {
-        console.log(event.detail)
         if(event.detail.category === 'all') {
             filtered = products
             return

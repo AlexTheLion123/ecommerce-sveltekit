@@ -2,6 +2,9 @@
 	import Price from './Price.svelte';
 	import Timer from './Timer.svelte';
 
+    import {goto} from '$app/navigation'
+    import {page} from '$app/stores'
+
 	export let title;
 	export let imgSrc;
 	export let price;
@@ -19,9 +22,13 @@
 		deadline = new Date(discountDeadline);
 		isSpecial = new Date() < deadline;
 	}
+
+    function gotoProduct() {
+        goto(`${$page.url.pathname}/${title}`)
+    }
 </script>
 
-<main class:isSpecial>
+<main class:isSpecial on:click={gotoProduct}>
 	<img src={imgSrc} alt={title} />
 
 	<content>
@@ -41,8 +48,6 @@
 			</div>
 		</footer>
 	</content>
-
-	{strain}
 </main>
 
 <style>
