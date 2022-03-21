@@ -12,9 +12,11 @@
 </script>
 
 <script>
-	import Icon from '$lib/components/productFull/Icon.svelte';
+	import IconPanel from '$lib/components/productFull/iconPanel/IconPanel.svelte';
 
 	export let product;
+
+	const imgSrcArray = [product.imgSrc, product.imgSrc1, product.imgSrc2, product.imgSrc3];
 </script>
 
 <main>
@@ -22,20 +24,7 @@
 		<img src={product.imgSrc} alt={product.title} />
 	</section>
 	<section class="img-panel">
-		<div class="icon">
-			<Icon imgSrc={product.imgSrc} isCurrent={true} />
-		</div>
-
-		<div class="icon">
-			<Icon imgSrc={product.imgSrc1} />
-		</div>
-
-		<div class="icon">
-			<Icon imgSrc={product.imgSrc2} />
-		</div>
-		<div class="icon">
-			<Icon imgSrc={product.imgSrc3} />
-		</div>
+		<IconPanel {imgSrcArray}/>
 	</section>
 </main>
 
@@ -46,11 +35,6 @@
 
 		grid-template: 2fr 1fr;
 		grid-gap: 1rem;
-	}
-
-	.img-panel {
-		display: flex;
-		gap: 1rem;
 	}
 
 	.main-img {

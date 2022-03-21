@@ -38,6 +38,6 @@
 	}
 
 	.selected {
-		border: 2px solid rgb(72, 175, 25);
+		border: 2px solid rgba(76, 231, 76, 0.74);
 	}
 </style>
