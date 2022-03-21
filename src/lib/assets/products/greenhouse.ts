@@ -1,6 +1,6 @@
 export const greenhouse = [
     {
-        title: "Title",
+        title: "title 1",
         imgSrc: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
         price: Math.round(Math.random()*200),
         discount: 10,
@@ -8,10 +8,14 @@ export const greenhouse = [
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
         numReviews: Math.round(Math.random()*1000),
         aveReviews: Math.round(Math.random()*10),
-        strain: "indica"
+        strain: "indica",
+        imgSrc1: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc2: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc3: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        descriptionFull: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
     },
     {
-        title: "Title",
+        title: "title 2",
         imgSrc: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
         price: Math.round(Math.random()*200),
         discount: 10,
@@ -19,10 +23,14 @@ export const greenhouse = [
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
         numReviews: Math.round(Math.random()*1000),
         aveReviews: Math.round(Math.random()*10),
-        strain: "indica"
+        strain: "indica",
+        imgSrc1: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc2: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc3: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        descriptionFull: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
     },
     {
-        title: "Title",
+        title: "Title 3",
         imgSrc: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
         price: Math.round(Math.random()*200),
         discount: 10,
@@ -30,10 +38,14 @@ export const greenhouse = [
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
         numReviews: Math.round(Math.random()*1000),
         aveReviews: Math.round(Math.random()*10),
-        strain: "indica"
+        strain: "indica",
+        imgSrc1: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc2: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc3: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        descriptionFull: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
     },
     {
-        title: "Title",
+        title: "Title 4",
         imgSrc: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
         price: Math.round(Math.random()*200),
         discount: 10,
@@ -41,10 +53,14 @@ export const greenhouse = [
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
         numReviews: Math.round(Math.random()*1000),
         aveReviews: Math.round(Math.random()*10),
-        strain: "indica"
+        strain: "indica",
+        imgSrc1: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc2: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc3: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        descriptionFull: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
     },
     {
-        title: "Title",
+        title: "Title 5",
         imgSrc: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
         price: Math.round(Math.random()*200),
         discount: 10,
@@ -52,10 +68,14 @@ export const greenhouse = [
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
         numReviews: Math.round(Math.random()*1000),
         aveReviews: Math.round(Math.random()*10),
-        strain: "sativa"
+        strain: "sativa",
+        imgSrc1: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc2: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc3: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        descriptionFull: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
     },
     {
-        title: "Title",
+        title: "Title 6",
         imgSrc: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
         price: Math.round(Math.random()*200),
         discount: 10,
@@ -63,6 +83,10 @@ export const greenhouse = [
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
         numReviews: Math.round(Math.random()*1000),
         aveReviews: Math.round(Math.random()*10),
-        strain: "sativa"
+        strain: "sativa",
+        imgSrc1: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc2: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc3: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        descriptionFull: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
     },
 ]
