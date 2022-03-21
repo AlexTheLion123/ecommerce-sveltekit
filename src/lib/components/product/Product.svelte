@@ -35,7 +35,7 @@
 <style>
     main {
         background: #414449ff;
-        width: 13rem;
+        width: 15rem;
 
         display: flex;
         flex-direction: column;
