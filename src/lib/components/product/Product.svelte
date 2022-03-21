@@ -13,7 +13,6 @@
 
 	const deadline = new Date(discountDeadline);
 	const isSpecial = new Date() < deadline;
-	console.log(deadline);
 </script>
 
 <main class:isSpecial>
