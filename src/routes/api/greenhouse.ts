@@ -1,7 +1,7 @@
-import { greenhouseItems } from "$lib/assets/greenhouseItems";
+import { greenhouse } from "$lib/assets/products/greenhouse";
 
 export async function get() {
-    const items = JSON.stringify(greenhouseItems)
+    const items = JSON.stringify(greenhouse)
 
     return {
         body: items

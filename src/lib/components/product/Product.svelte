@@ -17,47 +17,76 @@
         <img src={imgSrc} alt={title}>
     </header>
 
-    <section class="title">{title}</section>
-    <section class="description">{description}</section>
-
-    <footer>
-        <div class="price">R {price}</div>
-        <div class="reviews-container">
-            <div class="reviews">Reviews: {numReviews}</div>
-            <div class="aveReviews">{aveReviews}</div>
-        </div>
-    </footer>
+    <content>
+        <section class="title">{title}</section>
+        <section class="description">{description}</section>
+    
+        <footer>
+            <div class="price">R {price}</div>
+            <div class="reviews-container">
+                <div class="num-reviews">Reviews: {numReviews}</div>
+                <div class="ave-reviews">{aveReviews}</div>
+            </div>
+        </footer>
+    </content>
 </main>
 
 
 <style>
     main {
         background: #414449ff;
-        height: 5rem;
-        width: 3rem;
+        width: 13rem;
 
         display: flex;
         flex-direction: column;
 
         border: 1px solid transparent;
-        box-shadow: 0 0 8px #505153ff;
+        box-shadow: 0 0 8px rgb(143, 145, 148);
+
+        border-radius: 5px;
+        overflow: hidden;
     }
 
     main:hover {
-        border: 1px solid #505153ff;
+        border: 1px solid rgb(165, 167, 172);
     }
 
+    content {
+        padding: 0.5rem;
+
+        display: grid;
+        grid-template-rows: 1.5fr 5fr 3fr;
+        align-items: center;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .description {
+        font-size: 0.7rem;
+        color: rgb(133, 133, 133);
+    }
 
     footer {
         display: flex;
         justify-content: space-between;
     }
 
+    .price {
+        font-size: 1.5rem;
+        align-self: flex-end;
+    }
 
-
-    .aveReviews {
+    .num-reviews {
+        padding: 0.5rem 0;
+    }
+    .ave-reviews {
         padding: 0.5rem 1rem;
         background: #2f2f2fff;
+        text-align: center;
+        border-radius: 5px;
     }   
 
 </style>
