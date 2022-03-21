@@ -1,15 +1,19 @@
 <script lang="ts">
+    import {isBefore} from 'date-fns'
+
     export let title;
     export let imgSrc;
     export let price;
     export let discount: number;
-    export let discountDeadline: Date;
+    export let discountDeadline: string;
     export let description;
     export let numReviews;
     export let aveReviews;
 
 
-    const isSpecial = (new Date()) < discountDeadline
+    const deadline = new Date(discountDeadline)
+    const isSpecial = new Date() < deadline
+    console.log(deadline)
 </script>
 
 <main class:isSpecial>
@@ -49,6 +53,10 @@
 
     main:hover {
         border: 1px solid rgb(165, 167, 172);
+    }
+
+    .isSpecial {
+        border: 1px solid purple;
     }
 
     content {
