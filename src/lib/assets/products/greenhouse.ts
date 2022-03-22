@@ -9,9 +9,9 @@ export const greenhouse = [
         numReviews: Math.round(Math.random()*1000),
         aveReviews: Math.round(Math.random()*10),
         strain: "indica",
-        imgSrc1: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
-        imgSrc2: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
-        imgSrc3: "/src/lib/assets/images/greenhouse/Blunicorn.jpg",
+        imgSrc1: "/src/lib/assets/images/greenhouse/Frosted Apricots.jpg",
+        imgSrc2: "/src/lib/assets/images/greenhouse/Lion's Bread.jpg",
+        imgSrc3: "/src/lib/assets/images/greenhouse/Perps Express.jpg",
         descriptionFull: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?"
     },
     {

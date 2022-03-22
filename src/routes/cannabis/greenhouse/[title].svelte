@@ -12,7 +12,7 @@
 </script>
 
 <script>
-	import IconPanel from '$lib/components/productFull/iconPanel/IconPanel.svelte';
+	import FullImagePanel from '$lib/components/productFull/images/FullImagePanel.svelte';
 
 	export let product;
 
@@ -20,12 +20,7 @@
 </script>
 
 <main>
-	<section class="main-img">
-		<img src={product.imgSrc} alt={product.title} />
-	</section>
-	<section class="img-panel">
-		<IconPanel {imgSrcArray}/>
-	</section>
+	<FullImagePanel {imgSrcArray}/>
 </main>
 
 <style>
@@ -37,12 +32,4 @@
 		grid-gap: 1rem;
 	}
 
-	.main-img {
-		width: 30rem;
-	}
-
-	.main-img img {
-		max-width: 100%;
-		max-height: 100%;
-	}
 </style>
