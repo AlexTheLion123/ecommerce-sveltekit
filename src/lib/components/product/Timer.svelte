@@ -15,27 +15,29 @@
 
 	const deadlineMilli = deadline.getTime();
 
-
-
 	let hms = gethmsFromDeadlineMilli(deadlineMilli);
 
 	const timer = setInterval(() => {
-		hms = gethmsFromDeadlineMilli(deadlineMilli)
+		hms = gethmsFromDeadlineMilli(deadlineMilli);
 	});
 
-    function gethmsFromDeadlineMilli(_deadlineMilli) {
-        const diffMilli = deadlineMilli - Date.now();
+	function gethmsFromDeadlineMilli(_deadlineMilli) {
+		const diffMilli = deadlineMilli - Date.now();
 		const diffSeconds = diffMilli / 1000;
 		return secondsToHMS(diffSeconds);
-    }
+	}
 
-    onDestroy(() => {
+	onDestroy(() => {
 		clearInterval(timer);
 	});
-
 </script>
 
-{hms}
+<main>
+	{hms}
+</main>
 
 <style>
+	main {
+		color: inherit;
+	}
 </style>

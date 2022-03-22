@@ -9,6 +9,8 @@
 	function iconClick(event) {
 		mainImgSrc = imgSrcArray[event.detail.current];
 	}
+
+    // TODO remove this to full component
 </script>
 
 <main>

@@ -15,8 +15,6 @@ export async function get() {
         }
     })
 
-    console.log(filtered)
-
     const items = JSON.stringify(filtered)
 
     return {

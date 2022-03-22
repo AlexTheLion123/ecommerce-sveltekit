@@ -4,6 +4,8 @@
 
     import {goto} from '$app/navigation'
     import {page} from '$app/stores'
+	import {capFirstLetter} from '$lib/scripts/utils'
+	import {isOnSpecial} from '$lib/scripts/utils'
 
 	export let title;
 	export let imgSrc;
@@ -15,17 +17,15 @@
 	export let aveReviews;
 	export let strain;
 
-	let deadline;
 	let isSpecial;
+	const deadline = new Date(discountDeadline);
 
-	$: {
-		deadline = new Date(discountDeadline);
-		isSpecial = new Date() < deadline;
-	}
+	$: isSpecial = isOnSpecial(discountDeadline)
 
     function gotoProduct() {
         goto(`${$page.url.pathname}/${title}`)
     }
+
 </script>
 
 <main class:isSpecial on:click={gotoProduct}>
@@ -33,7 +33,7 @@
 
 	<content>
 		<section class="title-timer">
-			<section class="title">{title}</section>
+			<section class="title">{capFirstLetter(title)}</section>
 			{#if isSpecial}
 				<section class="timer"><Timer {deadline} /></section>
 			{/if}

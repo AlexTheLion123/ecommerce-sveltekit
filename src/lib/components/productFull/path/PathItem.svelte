@@ -27,5 +27,6 @@
 	main:hover {
 		cursor: pointer;
 		color: lightblue;
+        text-decoration: underline;
 	}
 </style>

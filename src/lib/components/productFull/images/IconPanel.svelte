@@ -33,8 +33,9 @@
 		display: flex;
 		gap: 1rem;
 	}
-
+	
 	.selected {
+		overflow: hidden;
 		border: 2px solid rgba(76, 231, 76, 0.74);
 	}
 
