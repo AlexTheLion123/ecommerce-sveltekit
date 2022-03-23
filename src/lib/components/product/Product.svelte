@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { greenhouse } from '$lib/assets/products/d.greenhouse';
 	import { page } from '$app/stores';
-	import {browser} from '$app/env'
+	import { browser } from '$app/env';
 	import { capFirstLetter } from '$lib/scripts/utils';
 	import { isOnSpecial } from '$lib/scripts/utils';
 
@@ -22,15 +22,15 @@
 		showModal = true;
 	}
 
-		$: if (browser && showModal) {
-			console.log('show');
-			
-			history.pushState({}, null, `${$page.url.pathname}/${product.title}`);
-		} else if(browser && !showModal) {
-			console.log('don\'t show');
+	$: if (browser && showModal) {
+		console.log('show');
 
-			history.pushState({}, null, `${$page.url.pathname}`);
-		}
+		history.pushState({}, null, `${$page.url.pathname}/${product.title}`);
+	} else if (browser && !showModal) {
+		console.log("don't show");
+
+		history.pushState({}, null, `${$page.url.pathname}`);
+	}
 </script>
 
 <main class:isSpecial on:click={gotoProduct}>
