@@ -1,6 +1,7 @@
 <script>
 	import Nav from '$lib/components/layout/Nav.svelte';
 	import Header from '$lib/components/layout/Header.svelte';
+
 </script>
 
 <svelte:head
@@ -35,7 +36,6 @@
 		height: 4rem;
 		border-bottom: $border;
 	}
-
 
 	.container {
 		display: flex;

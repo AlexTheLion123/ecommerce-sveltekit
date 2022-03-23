@@ -1,6 +1,4 @@
 <script>
-	export let supabase;
-
 	async function signInWithEmail() {
 		const { user, error } = await supabase.auth.signIn({
 			email: 'example@email.com',
@@ -8,14 +6,9 @@
 		});
 	}
 
-	async function signInWithGoogle(){
+	async function signInWithGoogle() {}
 
-	}
-
-	async function signInWithPhone() {
-
-	}
-
+	async function signInWithPhone() {}
 </script>
 
 <main>

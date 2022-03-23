@@ -1,8 +1,6 @@
-export function get({event}) {
-    console.log(event, "this is the event")
+export function get(event) {
+    console.log(event.locals, "event locals")
     return {
-        body: {
-            supabase: event.locals.supabase
-        }
+        body: event.locals.supabase
     }
 }
