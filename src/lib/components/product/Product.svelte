@@ -70,7 +70,7 @@
 		flex-direction: column;
 
 		border: 1px solid transparent;
-		box-shadow: 0 0 8px rgb(143, 145, 148);
+		box-shadow: 0 0 5px rgb(143, 145, 148);
 
 		border-radius: 5px;
 		overflow: hidden;

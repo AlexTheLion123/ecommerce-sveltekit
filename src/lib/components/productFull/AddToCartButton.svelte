@@ -18,4 +18,8 @@
         min-width: 8rem;
 	}
 
+	button:hover {
+		cursor: pointer;
+	}
+
 </style>

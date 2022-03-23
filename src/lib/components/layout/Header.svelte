@@ -1,11 +1,17 @@
 <script>
     import Cart from './Cart.svelte';
+    import LoginButton from './LoginButton.svelte';
 </script>
 
 <header class="header-container">
 	<h1>TopShelf</h1>
-    <div class="cart-container">
-        <Cart/>
+    <div class="right">
+        <div class="cart-container">
+            <Cart/>
+        </div>
+        <div class="login-button">
+            <LoginButton/>
+        </div>
     </div>
 </header>
 
@@ -24,6 +30,12 @@
     h1 {
 
         font-size: 1.5rem;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
     }
     
 </style>
