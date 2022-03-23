@@ -1,54 +1,62 @@
 <script lang="ts">
+	import type { greenhouse } from '$lib/assets/products/d.greenhouse';
+	//import {goto} from '$app/navigation'
+	import {page} from '$app/stores'
+	import { capFirstLetter } from '$lib/scripts/utils';
+	import { isOnSpecial } from '$lib/scripts/utils';
+
 	import Price from './Price.svelte';
 	import Timer from './Timer.svelte';
+	import Modal from './Modal.svelte';
 
-    import {goto} from '$app/navigation'
-    import {page} from '$app/stores'
-	import {capFirstLetter} from '$lib/scripts/utils'
-	import {isOnSpecial} from '$lib/scripts/utils'
+	export let product: greenhouse;
 
-	export let title;
-	export let imgSrc;
-	export let price;
-	export let discount: number;
-	export let discountDeadline: string;
-	export let description;
-	export let numReviews;
-	export let aveReviews;
-	export let strain;
-
+	let showModal = false;
 	let isSpecial;
-	const deadline = new Date(discountDeadline);
+	const deadline = new Date(product.discountDeadline);
 
-	$: isSpecial = isOnSpecial(discountDeadline)
+	$: isSpecial = isOnSpecial(product.discountDeadline);
 
-    function gotoProduct() {
-        goto(`${$page.url.pathname}/${title}`)
-    }
+	function gotoProduct() {
+		//goto(`${$page.url.pathname}/${title}`)
+		showModal = true;
+	}
 
+	$: if(showModal) {
+		history.pushState({}, null, `${$page.url.pathname}/${product.title}`);
+	} else {
+		history.pushState({}, null, `${$page.url.pathname}`);
+
+	}
 </script>
 
 <main class:isSpecial on:click={gotoProduct}>
-	<img src={imgSrc} alt={title} />
+	<img src={product.imgSrc} alt={product.title} />
 
 	<content>
 		<section class="title-timer">
-			<section class="title">{capFirstLetter(title)}</section>
+			<section class="title">{capFirstLetter(product.title)}</section>
 			{#if isSpecial}
 				<section class="timer"><Timer {deadline} /></section>
 			{/if}
 		</section>
-		<section class="description">{description}</section>
+		<section class="description">{product.description}</section>
 
 		<footer>
-			<div class="price"><Price {price} {discount} {isSpecial} /></div>
+			<div class="price">
+				<Price price={product.price} discount={product.discount} {isSpecial} />
+			</div>
 			<div class="reviews-container">
-				<div class="num-reviews">Reviews: {numReviews}</div>
-				<div class="ave-reviews">{aveReviews}</div>
+				<div class="num-reviews">Reviews: {product.numReviews}</div>
+				<div class="ave-reviews">{product.aveReviews}</div>
 			</div>
 		</footer>
 	</content>
 </main>
+
+{#if showModal}
+	<Modal bind:showModal {product} />
+{/if}
 
 <style>
 	main {

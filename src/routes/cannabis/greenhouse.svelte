@@ -11,12 +11,14 @@
 	};
 </script>
 
-<script>
+<script lang="ts">
+	import type {greenhouse} from '$lib/assets/products/d.greenhouse'
+
 	import Product from '$lib/components/product/Product.svelte';
 	import SearchBar from '$lib/components/layout/SearchBar.svelte';
 	import Filters from '$lib/components/filter/Filters.svelte';
 
-	export let products;
+	export let products: greenhouse[];
 
     let filtered = products;
 
@@ -52,7 +54,7 @@
 
 	<content>
 		{#each filtered as product}
-			<Product {...product} />
+			<Product {product} />
 		{/each}
 	</content>
 </main>

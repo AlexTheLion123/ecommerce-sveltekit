@@ -1,7 +1,9 @@
-<script context="module">
+<script context="module" lang="ts">
+	import type { greenhouse } from "$lib/assets/products/d.greenhouse";
+
 	export const load = async function ({ fetch, params }) {
 		const res = await fetch(`/api/greenhouse/${params.title}`);
-		const product = await res.json();
+		const product: greenhouse = await res.json();
 
 		return {
 			props: {
@@ -11,102 +13,11 @@
 	};
 </script>
 
-<script>
-	import { page } from '$app/stores';
-	import { capFirstLetter } from '$lib/scripts/utils';
-	import { isOnSpecial } from '$lib/scripts/utils';
+<script lang="ts">
+	import ProductDetailed from "$lib/components/productFull/ProductDetailed.svelte"
 
-	import FullImagePanel from '$lib/components/productFull/images/FullImagePanel.svelte';
-	import ProductPath from '$lib/components/productFull/path/ProductPath.svelte';
-	import Price from '$lib/components/productFull/Price.svelte';
-	import Quantity from '$lib/components/productFull/Quantity.svelte';
-	import AddToCartButton from '$lib/components/productFull/AddToCartButton.svelte';
-
-	export let product;
-
-	const imgSrcArray = [product.imgSrc, product.imgSrc1, product.imgSrc2, product.imgSrc3];
-	const path = $page.url.pathname.split('/');
-
-	const deadline = new Date(product.discountDeadline);
-	const isSpecial = isOnSpecial(product.discountDeadline);
+	export let product
 </script>
 
-<div class="container">
-	<header>
-		<div class="back-button">Back</div>
-		<ProductPath {path} />
-	</header>
 
-	<main>
-		<section class="image-panel">
-			<FullImagePanel {imgSrcArray} />
-		</section>
-		<section class="title">
-			<h1>{capFirstLetter(product.title)}</h1>
-		</section>
-		<section class="description">
-			{product.description}
-		</section>
-		<section class="price">
-			<Price {isSpecial} price={product.price} discount={product.discount} />
-		</section>
-		<section class="quantity-and-cart">
-			<div class="quantity">
-				<Quantity />
-			</div>
-			<div class="add-to-cart">
-				<AddToCartButton />
-			</div>
-		</section>
-	</main>
-</div>
-
-<style>
-	.container {
-		padding: 2rem;
-	}
-
-	header {
-		display: flex;
-		gap: 2rem;
-		height: 3rem;
-	}
-	main {
-		display: grid;
-
-		grid-template:
-			'images title' 2rem
-			'images descrip' auto
-			'images price' 2rem
-			'images quantCart' 3rem
-			/ 1fr minmax(auto, 500px);
-			
-		grid-row-gap: 1rem;
-		grid-column-gap: 2rem;
-	}
-
-	.image-panel {
-		grid-area: images;
-		align-self: start;
-	}
-
-	.title {
-		grid-area: title;
-	}
-
-	.description {
-		grid-area: descrip;
-		color: rgb(172, 172, 172);
-	}
-
-	.price {
-		grid-area: price;
-	}
-
-	.quantity-and-cart {
-		 display: grid;
-		 grid-template-columns: minmax(auto, 8rem) 1fr;
-		 grid-column-gap: 1rem;
-	}
-
-</style>
+<ProductDetailed {...product}/>
