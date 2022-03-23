@@ -26,7 +26,6 @@
 	const deadline = new Date(discountDeadline);
 	const isSpecial = isOnSpecial(discountDeadline);
 
-	
 </script>
 
 <div class="container">
@@ -56,7 +55,6 @@
 
 <style>
 	.container {
-		padding: 2rem;
         max-width: 1000px;
 	}
 

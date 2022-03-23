@@ -14,18 +14,28 @@
 </script>
 
 <script lang="ts">
-	import {page} from '$app/stores'
+	import { page } from '$app/stores';
 
-import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
+	import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
 	import ProductPath from '$lib/components/productFull/path/ProductPath.svelte';
 
 	export let product;
 
 	const path = $page.url.pathname.split('/');
+
+	function checkProductExists(_product) {
+		return !(
+			_product &&
+			Object.keys(_product).length === 0 &&
+			Object.getPrototypeOf(_product) === Object.prototype
+		);
+	}
 </script>
 
-<header>
-	<div class="back-button">Back</div>
-	<ProductPath {path} />
-</header>
-<ProductDetailed {...product} />
+{#if checkProductExists(product)}
+	<header>
+		<div class="back-button">Back</div>
+		<ProductPath {path} />
+	</header>
+	<ProductDetailed {...product} />
+{/if}

@@ -24,12 +24,8 @@
 	}
 
 	$: if (browser && showModal) {
-		console.log('show');
-
-		history.pushState({}, null, `${$page.url.pathname}/${product.title}`);
+		history.pushState({}, null, `${$page.url.pathname}/${product.title.toLowerCase()}`);
 	} else if (browser && !showModal) {
-		console.log("don't show");
-
 		history.pushState({}, null, `${$page.url.pathname}`);
 	}
 </script>

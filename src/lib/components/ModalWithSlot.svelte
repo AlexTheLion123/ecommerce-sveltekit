@@ -28,7 +28,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(2, 2, 2, 0.329);
+		background: rgba(2, 2, 2, 0.561);
 		z-index: 9999;
 
 		display: grid;
@@ -39,8 +39,7 @@
     .container {
         border-radius: 3px;
         overflow: hidden;
-
-    }
+	}
 
 	header {
 		height: 2.5rem;
@@ -68,5 +67,6 @@
 
 	main {
 		background: #414449ff;
+		padding: 2rem;
 	}
 </style>
