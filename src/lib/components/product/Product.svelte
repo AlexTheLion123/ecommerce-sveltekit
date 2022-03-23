@@ -7,7 +7,8 @@
 
 	import Price from './Price.svelte';
 	import Timer from './Timer.svelte';
-	import Modal from './Modal.svelte';
+	import ModalWithSlot from '$lib/components/ModalWithSlot.svelte';
+	import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
 
 	export let product: greenhouse;
 
@@ -33,6 +34,10 @@
 	}
 </script>
 
+<ModalWithSlot bind:showModal>
+	<ProductDetailed {...product} />
+</ModalWithSlot>
+
 <main class:isSpecial on:click={gotoProduct}>
 	<img src={product.imgSrc} alt={product.title} />
 
@@ -56,10 +61,6 @@
 		</footer>
 	</content>
 </main>
-
-{#if showModal}
-	<Modal bind:showModal {product} />
-{/if}
 
 <style>
 	main {

@@ -1,9 +1,4 @@
-<script lang="ts">
-	import type { greenhouse } from '$lib/assets/products/d.greenhouse';
-
-	import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
-
-	export let product: greenhouse;
+<script>
 	export let showModal;
 
 	function closeModal() {
@@ -11,16 +6,20 @@
 	}
 </script>
 
-<div class="modal">
-	<main>
-		<header>
-			<div class="exit-cross-container" on:click={closeModal}>
-				<span class="exit-cross"> X </span>
-			</div>
-		</header>
-		<ProductDetailed {...product} />
-	</main>
-</div>
+{#if showModal}
+	<div class="modal">
+		<div class="container">
+			<header>
+				<div class="exit-cross-container" on:click={closeModal}>
+					<span class="exit-cross"> X </span>
+				</div>
+			</header>
+			<main>
+				<slot />
+			</main>
+		</div>
+	</div>
+{/if}
 
 <style>
 	.modal {
@@ -34,12 +33,19 @@
 
 		display: grid;
 		place-items: center;
+
 	}
+    
+    .container {
+        border-radius: 3px;
+        overflow: hidden;
+
+    }
 
 	header {
 		height: 2.5rem;
 		padding: 0 1rem;
-		background: rgba(86, 89, 92, 0.801);
+		background: rgba(86, 89, 92);
 
 		display: flex;
 		align-items: center;
@@ -55,14 +61,12 @@
 	.exit-cross-container:hover {
 		cursor: pointer;
 	}
-	
+
 	.exit-cross {
 		color: white;
 	}
 
 	main {
-		overflow: hidden;
-		border-radius: 5px;
 		background: #414449ff;
 	}
 </style>
