@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import type { greenhouse } from "$lib/assets/products/d.greenhouse";
+	import type { greenhouse } from '$lib/assets/products/d.greenhouse';
 
 	export const load = async function ({ fetch, params }) {
 		const res = await fetch(`/api/greenhouse/${params.title}`);
@@ -14,10 +14,18 @@
 </script>
 
 <script lang="ts">
-	import ProductDetailed from "$lib/components/productFull/ProductDetailed.svelte"
+	import {page} from '$app/stores'
 
-	export let product
+import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
+	import ProductPath from '$lib/components/productFull/path/ProductPath.svelte';
+
+	export let product;
+
+	const path = $page.url.pathname.split('/');
 </script>
 
-
-<ProductDetailed {...product}/>
+<header>
+	<div class="back-button">Back</div>
+	<ProductPath {path} />
+</header>
+<ProductDetailed {...product} />

@@ -4,7 +4,6 @@
 	import { isOnSpecial } from '$lib/scripts/utils';
 
 	import FullImagePanel from '$lib/components/productFull/images/FullImagePanel.svelte';
-	import ProductPath from '$lib/components/productFull/path/ProductPath.svelte';
 	import Price from '$lib/components/productFull/Price.svelte';
 	import Quantity from '$lib/components/productFull/Quantity.svelte';
 	import AddToCartButton from '$lib/components/productFull/AddToCartButton.svelte';
@@ -23,7 +22,6 @@
     export let strain: string;
 
 	const imgSrcArray = [imgSrc, imgSrc1, imgSrc2, imgSrc3];
-	const path = $page.url.pathname.split('/');
 
 	const deadline = new Date(discountDeadline);
 	const isSpecial = isOnSpecial(discountDeadline);
@@ -32,11 +30,6 @@
 </script>
 
 <div class="container">
-	<header>
-		<div class="back-button">Back</div>
-		<ProductPath {path} />
-	</header>
-
 	<main>
 		<section class="image-panel">
 			<FullImagePanel {imgSrcArray} />

@@ -1,14 +1,13 @@
 <script lang="ts">
 	import type { greenhouse } from '$lib/assets/products/d.greenhouse';
-	//import {goto} from '$app/navigation'
 	import { page } from '$app/stores';
+	import {browser} from '$app/env'
 	import { capFirstLetter } from '$lib/scripts/utils';
 	import { isOnSpecial } from '$lib/scripts/utils';
 
 	import Price from './Price.svelte';
 	import Timer from './Timer.svelte';
 	import Modal from './Modal.svelte';
-	import { onMount } from 'svelte';
 
 	export let product: greenhouse;
 
@@ -23,13 +22,15 @@
 		showModal = true;
 	}
 
-	onMount(() => {
-		$: if (showModal) {
+		$: if (browser && showModal) {
+			console.log('show');
+			
 			history.pushState({}, null, `${$page.url.pathname}/${product.title}`);
-		} else {
+		} else if(browser && !showModal) {
+			console.log('don\'t show');
+
 			history.pushState({}, null, `${$page.url.pathname}`);
 		}
-	});
 </script>
 
 <main class:isSpecial on:click={gotoProduct}>
