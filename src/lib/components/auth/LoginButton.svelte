@@ -1,17 +1,14 @@
 <script>
-	import LoginContainer from "./LoginContainer.svelte";
 	import ModalWithSlot from '$lib/components/ModalWithSlot.svelte'
+	import {goto} from '$app/navigation'
 
 	let showModal = false;
 
 	function login() {
-		showModal = true;
+		goto('login')
 	}
 </script>
 
-<ModalWithSlot bind:showModal>
-	<LoginContainer/>
-</ModalWithSlot>
 
 <button on:click={login}>Login</button>
 
