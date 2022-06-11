@@ -1,21 +1,17 @@
 <script>
-	async function signInWithEmail() {
-		const { user, error } = await supabase.auth.signIn({
-			email: 'example@email.com',
-			password: 'example-password'
-		});
+	import { signIn } from '$lib/scripts/supabase'
+
+	function signUp() {
+		
 	}
-
-	async function signInWithGoogle() {}
-
-	async function signInWithPhone() {}
 </script>
 
 <main>
-	<button on:click={signInWithEmail}>Login with email</button>
-	<button on:click={signInWithGoogle}>Login with google</button>
-	<button on:click={signInWithPhone}>Login with phone</button>
-	<button class="sign-up">Sign Up</button>
+	<button on:click={() => signIn('email')}>Login with email</button>
+	<button on:click={() => signIn('google')}>Login with google</button>
+	<button on:click={() => signIn('phone')}>Login with phone</button>
+	<button on:click={() => signIn('github')}>Login with github</button>
+	<button on:click={() => signUp()} class="sign-up">Sign Up</button>
 </main>
 
 <style>

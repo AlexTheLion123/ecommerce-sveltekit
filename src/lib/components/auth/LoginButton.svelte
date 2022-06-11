@@ -1,14 +1,10 @@
 <script>
-	import ModalWithSlot from '$lib/components/ModalWithSlot.svelte'
-	import {goto} from '$app/navigation'
-
-	let showModal = false;
+	import { goto } from '$app/navigation';
 
 	function login() {
-		goto('login')
+		goto('login');
 	}
 </script>
-
 
 <button on:click={login}>Login</button>
 
