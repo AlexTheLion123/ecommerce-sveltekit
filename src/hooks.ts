@@ -1,4 +1,3 @@
-//hooks.js
 import cookie from 'cookie'
 
 /*
@@ -7,6 +6,7 @@ import cookie from 'cookie'
 export const handle = async ({ event, resolve }) => {
   // if there's a cookie named `session`, grab the info
   const cookies = await cookie.parse(event.request.headers.get('cookie') || '')
+  
   const session = cookies.session ? JSON.parse(cookies.session) : null
 
   /*

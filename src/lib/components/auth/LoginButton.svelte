@@ -4,8 +4,6 @@
 	import { supabase, signOut } from '$lib/scripts/supabase';
 	//import { pages, loadPages } from '$lib/stores/pages';
 
-	let isSignedIn
-
 	supabase.auth.onAuthStateChange(async (event, sesh) => {
 		if (event === 'SIGNED_IN') {
 			console.log('trying to sign in')
@@ -22,9 +20,9 @@
 				method: 'POST',
 				body: JSON.stringify(sesh)
 			}).then(async (res) => {
+				console.log('set cookie status: ', res.status)
 				if (res.status === 200) {
 					console.log('signed in')
-					isSignedIn = true
 
 					/*
 					 ** hydrate our page array.
@@ -74,14 +72,13 @@
 			 ** document.cookie = `session=; Path=/; Secure; SameSite=Strict; Expires=Thu, 01 Jan 1970 00:00:00 UTC;`
 			 */
 
-			fetch('/api/cookie', {
+			fetch('/data/cookie', {
 				method: 'DELETE'
 			}).then((res) => {
 				if (res.status !== 204) {
 					console.log('session after trying to sign out: ', $session)
 					console.error('failed to expire cookie', res);
 				} else {
-					isSignedIn = false
 					console.log('signed out')
 					goto('/');
 				}
@@ -91,7 +88,7 @@
 	});
 
 	function handleClick() {
-		if(isSignedIn) {
+		if($session) {
 			// then log out
 			signOut()
 		} else {
@@ -104,7 +101,7 @@
 </script>
 
 <button on:click={handleClick}>
-	{#if isSignedIn}
+	{#if $session}
 		{$session.email}<br>
 	{:else}
 		Login 
