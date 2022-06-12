@@ -5,22 +5,19 @@
 	import { session } from '$app/stores';
 	import { goto } from '$app/navigation';
 
-	function signOut() {
+	async function signOut() {
 		supabaseClient.auth.signOut();
-		const { data: authListener } = supabaseClient.auth.onAuthStateChange(async (event, session) => {
-			const body = JSON.stringify({ event, session });
-			const headers = new Headers({ 'Content-Type': 'application/json' });
+		const body = JSON.stringify({ event, session });
+		const headers = new Headers({ 'Content-Type': 'application/json' });
 
-			await fetch('/api/login', {
-				method: 'post',
-				body,
-				headers,
-				credentials: 'same-origin'
-			});
+		await fetch('/api/cookie', {
+			method: 'DELETE',
+			body,
+			headers,
+			credentials: 'same-origin'
 		});
-		return () => {
-			authListener.unsubscribe();
-		};
+		console.log('cookie should be deleted');
+
 		goto('/');
 		console.log('should be signed out');
 	}
