@@ -2,7 +2,6 @@ import { supabaseClient } from "$lib/scripts/db";
 
 // only called on logout
 export async function del() {
-    console.log('deleting cookie')
     return {
         status: 204,
         headers: {

@@ -7,19 +7,19 @@
 
 	async function signOut() {
 		supabaseClient.auth.signOut();
-		const body = JSON.stringify({ event, session });
 		const headers = new Headers({ 'Content-Type': 'application/json' });
 
 		await fetch('/api/cookie', {
 			method: 'DELETE',
-			body,
 			headers,
 			credentials: 'same-origin'
-		});
-		console.log('cookie should be deleted');
-
+		})
+		.then(({status}) => {
+			if(status !== 204) {
+				alert('error in logging out')
+			}
+		})
 		goto('/');
-		console.log('should be signed out');
 	}
 </script>
 
