@@ -1,6 +1,8 @@
 <script>
     import Cart from './Cart.svelte';
     import LoginButton from '../auth/LoginButton.svelte';
+
+    
 </script>
 
 <header class="header-container">
