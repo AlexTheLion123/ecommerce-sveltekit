@@ -30,8 +30,11 @@
   },
   "type": "module",
   "dependencies": {
+    "@supabase/auth-helpers-svelte": "^0.4.2",
+    "@supabase/auth-helpers-sveltekit": "^0.6.1",
     "cookie": "^0.5.0",
     "jsonwebtoken": "^8.5.1",
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "supabase-ui-svelte": "^0.1.1"
   }
 }

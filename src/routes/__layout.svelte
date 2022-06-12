@@ -2,7 +2,14 @@
 	import Nav from '$lib/components/layout/Nav.svelte';
 	import Header from '$lib/components/layout/Header.svelte';
 
-	
+	import { goto } from '$app/navigation';
+	import { session } from '$app/stores';
+	import { supabaseClient } from '$lib/scripts/db';
+	import { SupaAuthHelper } from '@supabase/auth-helpers-svelte';
+
+	const onUserUpdate = async (user) => {
+		if (user) await goto('/');
+	};
 </script>
 
 <svelte:head
@@ -13,21 +20,22 @@
 	/>
 </svelte:head>
 
-<header>
-	<Header/>
-</header>
+<SupaAuthHelper {supabaseClient} {session} {onUserUpdate}>
+	<div class="all">
+		<header>
+			<Header />
+		</header>
 
-<div class="container">
-	<div class="main-wrapper">
-		<Nav />
-		<!-- <div class="img-wrapper">
-			<img src="src/images/weed_symbol.svg" alt="" id="weed-nav-symbol" />
-		</div> -->
-		<main>
-			<slot />
-		</main>
+		<div class="container">
+			<div class="main-wrapper">
+				<Nav />
+				<main>
+					<slot />
+				</main>
+			</div>
+		</div>
 	</div>
-</div>
+</SupaAuthHelper>
 
 <style lang="scss">
 	$border: 0.5px solid rgba(128, 128, 128, 0.3);
