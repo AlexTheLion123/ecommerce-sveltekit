@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 
 	const navList = [
-		{ heading: 'Cannabis', items: ['greenhouse', 'indoor', 'edibles'] },
+		{ heading: 'Cannabis', items: ['greenhouse', 'indoor','outdoor',  'edibles'] },
 		{ heading: 'Vaping', items: ['vapes', 'concentrates'] },
 		{ heading: 'Merch', items: ['grinders', 'clothing'] }
 	];
@@ -83,6 +83,8 @@
 		height: 100%;
 		border-right: $border;
 		background: $nav-background;
+		width: 13rem;
+
 		ul {
 			list-style: none;
 

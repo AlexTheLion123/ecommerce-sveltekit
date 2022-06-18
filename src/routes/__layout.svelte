@@ -6,6 +6,7 @@
 	import { session } from '$app/stores';
 	import { supabaseClient } from '$lib/scripts/db';
 	import { SupaAuthHelper } from '@supabase/auth-helpers-svelte';
+	import "../app.css";
 
 	const onUserUpdate = async (user) => {
 		if (user) await goto('/');
@@ -21,17 +22,16 @@
 </svelte:head>
 
 <SupaAuthHelper {supabaseClient} {session} {onUserUpdate}>
-	<div class="all">
+	<div class="container">
 		<header>
 			<Header />
 		</header>
-
-		<div class="container">
-			<div class="main-wrapper">
+		<div class="main-bottom">
+			<nav>
 				<Nav />
-				<main>
-					<slot />
-				</main>
+			</nav>
+			<div class="content">
+				<slot />
 			</div>
 		</div>
 	</div>
@@ -41,21 +41,22 @@
 	$border: 0.5px solid rgba(128, 128, 128, 0.3);
 	$max-width: 1500px;
 	$main-background: rgb(50, 53, 56);
+
 	header {
 		height: 4rem;
 		border-bottom: $border;
 	}
 
-	.container {
+	.main-bottom {
 		display: flex;
-		justify-content: center;
+	}
 
-		.main-wrapper {
-			position: absolute;
-			width: 100%;
-			display: grid;
-			grid-template-columns: 13rem 1fr;
-		}
+	.content {
+		padding: 2rem;
+	}
+
+	.container {
+		overflow-x: hidden;
 	}
 
 	:root {
