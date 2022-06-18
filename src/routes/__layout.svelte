@@ -31,7 +31,9 @@
 				<Nav />
 			</nav>
 			<div class="content">
-				<slot />
+				<div class="content-wrapper">
+					<slot />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -51,8 +53,9 @@
 		display: flex;
 	}
 
-	.content {
+	.content-wrapper {
 		padding: 2rem;
+		position: absolute;
 	}
 
 	.container {

@@ -6,14 +6,12 @@ export const isOnSpecial = function (discountDeadline: string) {
     return new Date() < new Date(discountDeadline);
 }
 
-export const scrollIntoView: svelte.JSX.EventHandler = ({ currentTarget }) => {
+export const scrollIntoView = (idToScroll: string) => {
     
-    const href = currentTarget.getAttribute('href')
-    console.log(href)
-    const scrollToElement = document.querySelector(href)
+    const scrollToElement = document.querySelector(idToScroll)
 
     if (!scrollToElement){ 
-        console.log('element not found')
+        console.log('element not found', idToScroll)
         return
     }
 
