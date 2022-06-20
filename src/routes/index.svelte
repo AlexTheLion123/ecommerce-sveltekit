@@ -16,9 +16,4 @@
 
 <main>
     <Carousel {images}/>
-
-    <section>
-        For queries contact 123-456-78912
-    </section>
-
 </main>

@@ -22,7 +22,7 @@
 </svelte:head>
 
 <SupaAuthHelper {supabaseClient} {session} {onUserUpdate}>
-	<div class="container">
+	<div class="containeri">
 		<header>
 			<Header />
 		</header>
@@ -58,8 +58,9 @@
 		position: absolute;
 	}
 
-	.container {
+	.containeri {
 		overflow-x: hidden;
+		width: 100vw;
 	}
 
 	:root {
