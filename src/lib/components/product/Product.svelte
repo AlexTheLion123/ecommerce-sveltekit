@@ -11,12 +11,18 @@
 	import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
 
 	export let product: greenhouse;
+	console.log('my product')
+	console.log(product)
+
 
 	let showModal = false;
 	let isSpecial;
-	const deadline = new Date(product.discountDeadline);
+	let expiry: Date
 
-	$: isSpecial = isOnSpecial(product.discountDeadline);
+	if(product.discount_percent && product.discount_expiry)  {
+		expiry = new Date(product.discount_expiry);
+		isSpecial = new Date < expiry;
+	}
 
 	function gotoProduct() {
 		//goto(`${$page.url.pathname}/${title}`)
@@ -35,20 +41,20 @@
 </ModalWithSlot>
 
 <main class:isSpecial on:click={gotoProduct}>
-	<img src={product.imgSrc} alt={product.title} />
+	<img src={product.imgSrc} alt={product.name} />
 
 	<content>
 		<section class="title-timer">
-			<section class="title">{capFirstLetter(product.title)}</section>
+			<section class="title">{capFirstLetter(product.name)}</section>
 			{#if isSpecial}
-				<section class="timer"><Timer {deadline} /></section>
+				<section class="timer"><Timer deadline={expiry} /></section>
 			{/if}
 		</section>
-		<section class="description">{product.description}</section>
+		<section class="description">{product.desc}</section>
 
 		<footer>
 			<div class="price">
-				<Price price={product.price} discount={product.discount} {isSpecial} />
+				<Price price={product.price} discount={product.discount_percent} {isSpecial} />
 			</div>
 			<div class="reviews-container">
 				<div class="num-reviews">Reviews: {product.numReviews}</div>

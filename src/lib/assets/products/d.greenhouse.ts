@@ -1,14 +1,10 @@
 export type greenhouse = {
-    title: string;
-    imgSrc: string;
+    name: string;
+    desc: string;
     price: number;
-    discount: number;
-    discountDeadline: string;
-    description: string;
-    numReviews: number;
-    aveReviews: number;
-    strain: string;
-    imgSrc1: string;
-    imgSrc2: string;
-    imgSrc3: string;
+    discount_percent: number | null;
+    discount_expiry: number | null;
+    category: string;
+    sub_category: string;
+    inventory: number;
 }

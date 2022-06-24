@@ -8,7 +8,7 @@
 
 	export let products;
 	products = JSON.parse(products) as greenhouse[];
-
+	
 	let filtered = products;
 
 	const filters = [
