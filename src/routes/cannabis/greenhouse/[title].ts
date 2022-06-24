@@ -13,6 +13,6 @@ export async function get({params}) {
     const product = JSON.stringify(item)
 
     return {
-        body: product
+        body: {product}
     }
 }

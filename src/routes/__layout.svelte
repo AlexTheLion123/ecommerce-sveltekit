@@ -22,16 +22,16 @@
 </svelte:head>
 
 <SupaAuthHelper {supabaseClient} {session} {onUserUpdate}>
-	<div class="containeri">
-		<header>
+	<div class="w-screen">
+		<header class="h-16 border-b border-[rgba(128, 128, 128, 0.3)]">
 			<Header />
 		</header>
-		<div class="main-bottom">
+		<div class="flex">
 			<nav>
 				<Nav />
 			</nav>
 			<div class="content">
-				<div class="content-wrapper">
+				<div class="p-8">
 					<slot />
 				</div>
 			</div>
@@ -40,28 +40,10 @@
 </SupaAuthHelper>
 
 <style lang="scss">
-	$border: 0.5px solid rgba(128, 128, 128, 0.3);
+	$border: 0.5px solid ;
 	$max-width: 1500px;
 	$main-background: rgb(50, 53, 56);
 
-	header {
-		height: 4rem;
-		border-bottom: $border;
-	}
-
-	.main-bottom {
-		display: flex;
-	}
-
-	.content-wrapper {
-		padding: 2rem;
-		position: absolute;
-	}
-
-	.containeri {
-		overflow-x: hidden;
-		width: 100vw;
-	}
 
 	:root {
 		font-family: 'Nunito', sans-serif;

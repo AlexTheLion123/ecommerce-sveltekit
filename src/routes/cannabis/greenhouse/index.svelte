@@ -1,16 +1,3 @@
-<script context="module">
-	export const load = async function ({ fetch }) {
-		const res = await fetch('/api/greenhouse');
-		const products = await res.json();
-
-		return {
-			props: {
-				products
-			}
-		};
-	};
-</script>
-
 <script lang="ts">
 	import type {greenhouse} from '$lib/assets/products/d.greenhouse'
 
@@ -18,7 +5,8 @@
 	import SearchBar from '$lib/components/layout/SearchBar.svelte';
 	import Filters from '$lib/components/filter/Filters.svelte';
 
-	export let products: greenhouse[];
+	export let products;
+	products = JSON.parse(products)
 
     let filtered = products;
 
