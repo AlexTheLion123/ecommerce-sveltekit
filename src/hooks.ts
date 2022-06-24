@@ -1,10 +1,10 @@
 // src/hooks.ts
-import { handleUser, handleCallback } from '@supabase/auth-helpers-sveltekit';
+import { handleAuth } from '@supabase/auth-helpers-sveltekit';
 import type { GetSession, Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
 import { supabaseClient } from "$lib/scripts/db";
 
-export const handle: Handle = sequence(handleCallback(), handleUser());
+export const handle: Handle = sequence(...handleAuth());
 
 export const getSession: GetSession = async (event) => {
   const { user, accessToken, error } = event.locals as any;
@@ -15,6 +15,12 @@ export const getSession: GetSession = async (event) => {
   };
 };
 
+// /** @type {import('@sveltejs/kit').Handle} */
+// function addSupabase({event, resolve}) {
+//   event.locals.supabaseClient = supabaseClient
+
+//   return resolve(event)
+// }
 
 // only called on logout
 // /** @type {import('@sveltejs/kit').Handle} */

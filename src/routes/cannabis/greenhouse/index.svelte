@@ -1,14 +1,15 @@
 <script lang="ts">
-	import type {greenhouse} from '$lib/assets/products/d.greenhouse'
+	import type { greenhouse } from '$lib/assets/products/d.greenhouse';
 
 	import Product from '$lib/components/product/Product.svelte';
 	import SearchBar from '$lib/components/layout/SearchBar.svelte';
 	import Filters from '$lib/components/filter/Filters.svelte';
+	import { supabaseClient } from '$lib/scripts/db';
 
 	export let products;
-	products = JSON.parse(products)
+	products = JSON.parse(products) as greenhouse[];
 
-    let filtered = products;
+	let filtered = products;
 
 	const filters = [
 		{
@@ -18,17 +19,16 @@
 		}
 	];
 
-    function filterClick(event) {
-        if(event.detail.category === 'all') {
-            filtered = products
-            return
-        }
+	function filterClick(event) {
+		if (event.detail.category === 'all') {
+			filtered = products;
+			return;
+		}
 
-        filtered = products.filter(item => {
-            return item[event.detail.filterName] === event.detail.category
-        })
-
-    }
+		filtered = products.filter((item) => {
+			return item[event.detail.filterName] === event.detail.category;
+		});
+	}
 </script>
 
 <main>
@@ -37,7 +37,7 @@
 	</div>
 
 	<div class="filter">
-		<Filters {filters} on:filterClick={filterClick}/>
+		<Filters {filters} on:filterClick={filterClick} />
 	</div>
 
 	<content>
@@ -49,9 +49,9 @@
 
 <style>
 	main {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
 	content {
