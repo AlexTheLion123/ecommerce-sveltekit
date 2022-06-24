@@ -44,7 +44,6 @@
 	$max-width: 1500px;
 	$main-background: rgb(50, 53, 56);
 
-
 	:root {
 		font-family: 'Nunito', sans-serif;
 		font-weight: 500;
