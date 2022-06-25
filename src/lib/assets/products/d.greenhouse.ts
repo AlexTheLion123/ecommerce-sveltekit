@@ -1,6 +1,6 @@
 export type greenhouse = {
     name: string;
-    desc: string;
+    description: string;
     price: number;
     inventory: number;
     discount_percent: number | null;
@@ -9,4 +9,5 @@ export type greenhouse = {
     strain: string;
     average_rating: number | null;
     num_reviews: number;
+    images: string;
 }

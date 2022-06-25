@@ -4,11 +4,13 @@
 	import Product from '$lib/components/product/Product.svelte';
 	import SearchBar from '$lib/components/layout/SearchBar.svelte';
 	import Filters from '$lib/components/filter/Filters.svelte';
-import AddToCartButton from '$lib/components/productFull/AddToCartButton.svelte';
-import Card from '$lib/components/Carousel/Card.svelte';
 
-	export let products: greenhouse[];
+	type Products = greenhouse & {img_src: string}
+
+	export let products: Products[];
 	$: filtered = products;
+
+	$: console.log(products)
 
 	const filters = [
 		{
@@ -40,8 +42,8 @@ import Card from '$lib/components/Carousel/Card.svelte';
 	</div>
 
 	<content>
-		{#each filtered as product}
-			<Product {...product} />
+		{#each filtered as {name,discount_expiry,price,description,discount_percent,num_reviews,average_rating,img_src}}
+			<Product {name} {discount_expiry} {price} {description} {discount_percent} {num_reviews} {average_rating} {img_src}/>
 		{/each}
 	</content>
 </main>

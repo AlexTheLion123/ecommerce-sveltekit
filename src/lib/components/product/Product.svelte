@@ -12,7 +12,7 @@
 	export let name: string;
 	export let discount_expiry: number;
 	export let price: number;
-	export let desc: string;
+	export let description: string;
 	export let discount_percent: number | null;
 	export let num_reviews: number;
 	export let average_rating: number | null;
@@ -56,7 +56,7 @@
 				<section class="timer"><Timer deadline={expiry} /></section>
 			{/if}
 		</section>
-		<section class="description">{desc}</section>
+		<section class="description">{description}</section>
 
 		<footer>
 			<div class="price">
@@ -64,7 +64,7 @@
 			</div>
 			<div class="reviews-container">
 				<div class="num-reviews">Reviews: {num_reviews}</div>
-				<div class="ave-reviews">{average_rating}</div>
+				<div class="ave-reviews">{Math.round(average_rating*100)/100}</div>
 			</div>
 		</footer>
 	</content>
