@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { greenhouse } from '$lib/assets/products/d.greenhouse';
 	import { page } from '$app/stores';
 	import { browser } from '$app/env';
 	import { capFirstLetter } from '$lib/scripts/utils';
@@ -10,15 +9,22 @@
 	import ModalWithSlot from '$lib/components/ModalWithSlot.svelte';
 	import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
 
-	export let product: greenhouse;
+	export let name: string;
+	export let discount_expiry: number;
+	export let price: number;
+	export let desc: string;
+	export let discount_percent: number | null;
+	export let num_reviews: number;
+	export let average_rating: number | null;
+	export let img_src: string;
 
 	let showModal = false;
 	let isSpecial;
-	let expiry: Date
+	let expiry: Date;
 
-	if(product.discount_percent && product.discount_expiry)  {
-		expiry = new Date(product.discount_expiry);
-		isSpecial = new Date < expiry;
+	if(discount_percent && discount_expiry)  {
+		expiry = new Date(discount_expiry);
+		isSpecial = new Date() < expiry;
 	} else {
 		isSpecial = false
 	}
@@ -29,7 +35,7 @@
 	}
 
 	$: if (browser && showModal) {
-		history.pushState({}, null, `${$page.url.pathname}/${product.name.toLowerCase()}`);
+		history.pushState({}, null, `${$page.url.pathname}/${name.toLowerCase()}`);
 	} else if (browser && !showModal) {
 		history.pushState({}, null, `${$page.url.pathname}`);
 	}
@@ -41,24 +47,24 @@
  -->
  
 <main class:isSpecial on:click={gotoProduct}>
-	<img src={product.imgSrc} alt={product.name} />
+	<img src={img_src} alt={name} />
 
 	<content>
 		<section class="title-timer">
-			<section class="title">{capFirstLetter(product.name)}</section>
+			<section class="title">{capFirstLetter(name)}</section>
 			{#if isSpecial}
 				<section class="timer"><Timer deadline={expiry} /></section>
 			{/if}
 		</section>
-		<section class="description">{product.desc}</section>
+		<section class="description">{desc}</section>
 
 		<footer>
 			<div class="price">
-				<Price price={product.price} discount={product.discount_percent} {isSpecial} />
+				<Price {price} {discount_percent} {isSpecial} />
 			</div>
 			<div class="reviews-container">
-				<div class="num-reviews">Reviews: {product.num_reviews}</div>
-				<div class="ave-reviews">{product.average_rating}</div>
+				<div class="num-reviews">Reviews: {num_reviews}</div>
+				<div class="ave-reviews">{average_rating}</div>
 			</div>
 		</footer>
 	</content>

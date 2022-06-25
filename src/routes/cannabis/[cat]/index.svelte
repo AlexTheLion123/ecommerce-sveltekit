@@ -4,6 +4,8 @@
 	import Product from '$lib/components/product/Product.svelte';
 	import SearchBar from '$lib/components/layout/SearchBar.svelte';
 	import Filters from '$lib/components/filter/Filters.svelte';
+import AddToCartButton from '$lib/components/productFull/AddToCartButton.svelte';
+import Card from '$lib/components/Carousel/Card.svelte';
 
 	export let products: greenhouse[];
 	$: filtered = products;
@@ -39,7 +41,7 @@
 
 	<content>
 		{#each filtered as product}
-			<Product {product} />
+			<Product {...product} />
 		{/each}
 	</content>
 </main>

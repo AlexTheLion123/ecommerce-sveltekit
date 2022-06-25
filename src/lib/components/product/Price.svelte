@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let price: number;
 	export let isSpecial: boolean;
-	export let discount: number;
+	export let discount_percent: number;
 </script>
 
 <main>
@@ -10,10 +10,10 @@
 	{:else}
         <div class="top">
             <s>R {price}</s> 
-            <div class="percent-off">-{discount}%</div>
+            <div class="percent-off">-{discount_percent}%</div>
         </div>
         <div class="bottom">
-            R {Math.round(price*(1-discount/100))}
+            R {Math.round(price*(1-discount_percent/100))}
 
         </div>
     {/if}
