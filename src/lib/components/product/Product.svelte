@@ -29,7 +29,7 @@
 	}
 
 	$: if (browser && showModal) {
-		history.pushState({}, null, `${$page.url.pathname}/${product.title.toLowerCase()}`);
+		history.pushState({}, null, `${$page.url.pathname}/${product.name.toLowerCase()}`);
 	} else if (browser && !showModal) {
 		history.pushState({}, null, `${$page.url.pathname}`);
 	}
@@ -57,8 +57,8 @@
 				<Price price={product.price} discount={product.discount_percent} {isSpecial} />
 			</div>
 			<div class="reviews-container">
-				<div class="num-reviews">Reviews: {product.numReviews}</div>
-				<div class="ave-reviews">{product.aveReviews}</div>
+				<div class="num-reviews">Reviews: {product.num_reviews}</div>
+				<div class="ave-reviews">{product.average_rating}</div>
 			</div>
 		</footer>
 	</content>

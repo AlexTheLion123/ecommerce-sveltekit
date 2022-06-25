@@ -7,7 +7,7 @@ export async function get({ request, url }) {
     const strain = getStrain(url)
 
     const { data: products, error } = await supabaseServerClient(request)
-        .rpc('getproductsbycat6', { p_category: strain })
+        .rpc('getproductsbycategory', { p_category: strain })
 
     return {
         status: 200,
