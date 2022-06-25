@@ -4,12 +4,9 @@
 	import Product from '$lib/components/product/Product.svelte';
 	import SearchBar from '$lib/components/layout/SearchBar.svelte';
 	import Filters from '$lib/components/filter/Filters.svelte';
-	import { supabaseClient } from '$lib/scripts/db';
 
-	export let products;
-	products = JSON.parse(products) as greenhouse[];
-	
-	let filtered = products;
+	export let products: greenhouse[];
+	$: filtered = products;
 
 	const filters = [
 		{

@@ -11,9 +11,6 @@
 	import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
 
 	export let product: greenhouse;
-	console.log('my product')
-	console.log(product)
-
 
 	let showModal = false;
 	let isSpecial;
@@ -22,6 +19,8 @@
 	if(product.discount_percent && product.discount_expiry)  {
 		expiry = new Date(product.discount_expiry);
 		isSpecial = new Date < expiry;
+	} else {
+		isSpecial = false
 	}
 
 	function gotoProduct() {
@@ -36,10 +35,11 @@
 	}
 </script>
 
-<ModalWithSlot bind:showModal>
+<!-- <ModalWithSlot bind:showModal>
 	<ProductDetailed {...product} />
 </ModalWithSlot>
-
+ -->
+ 
 <main class:isSpecial on:click={gotoProduct}>
 	<img src={product.imgSrc} alt={product.name} />
 
