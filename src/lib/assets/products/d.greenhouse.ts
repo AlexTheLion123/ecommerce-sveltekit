@@ -10,4 +10,5 @@ export type greenhouse = {
     average_rating: number | null;
     num_reviews: number;
     images: string;
+    id: string;
 }

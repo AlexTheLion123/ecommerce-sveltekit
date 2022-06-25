@@ -4,13 +4,12 @@
 	import Product from '$lib/components/product/Product.svelte';
 	import SearchBar from '$lib/components/layout/SearchBar.svelte';
 	import Filters from '$lib/components/filter/Filters.svelte';
+	import { page } from '$app/stores';
 
-	type Products = greenhouse & {img_src: string}
+	type Products = greenhouse & { img_src: string };
 
 	export let products: Products[];
 	$: filtered = products;
-
-	$: console.log(products)
 
 	const filters = [
 		{
@@ -42,8 +41,18 @@
 	</div>
 
 	<content>
-		{#each filtered as {name,discount_expiry,price,description,discount_percent,num_reviews,average_rating,img_src}}
-			<Product {name} {discount_expiry} {price} {description} {discount_percent} {num_reviews} {average_rating} {img_src}/>
+		{#each filtered as { id, name, discount_expiry, price, description, discount_percent, num_reviews, average_rating, img_src }}
+			<Product
+				{id}
+				{name}
+				{discount_expiry}
+				{price}
+				{description}
+				{discount_percent}
+				{num_reviews}
+				{average_rating}
+				{img_src}
+			/>
 		{/each}
 	</content>
 </main>

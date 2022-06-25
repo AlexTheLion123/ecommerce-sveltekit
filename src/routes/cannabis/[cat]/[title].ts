@@ -1,18 +1,18 @@
+import { supabaseServerClient } from '@supabase/auth-helpers-sveltekit';
+
 import { greenhouse } from "$lib/assets/products/greenhouse";
 
-export async function get({params}) {
-    let item;
-
-    for(let i=0; i<greenhouse.length; i++) {
-        if(greenhouse[i].title === params.title) {
-            item = greenhouse[i]
-            break;
-        }
-    }
-    
-    const product = JSON.stringify(item)
+export async function get({request, url}) {
+    let { data: product, error } = await supabaseServerClient(request)
+    .from('product')
+    .select('*')
+    .eq('id',parseInt(url.searchParams.get('id')))
 
     return {
-        body: {product}
-    }
+        status: 200,
+        headers: {
+            'cache-control': 'public, max-age=3600'
+        },
+        body: { product }
+    };
 }

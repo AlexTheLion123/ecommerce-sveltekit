@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { browser } from '$app/env';
+	import {goto} from '$app/navigation'
 	import { capFirstLetter } from '$lib/scripts/utils';
 	import { isOnSpecial } from '$lib/scripts/utils';
 
@@ -17,6 +18,7 @@
 	export let num_reviews: number;
 	export let average_rating: number | null;
 	export let img_src: string;
+	export let id: string;
 
 	let showModal = false;
 	let isSpecial;
@@ -30,8 +32,8 @@
 	}
 
 	function gotoProduct() {
-		//goto(`${$page.url.pathname}/${title}`)
-		showModal = true;
+		goto(`${$page.url.pathname}/${name}?id=${id}`)
+		//showModal = true;
 	}
 
 	$: if (browser && showModal) {
