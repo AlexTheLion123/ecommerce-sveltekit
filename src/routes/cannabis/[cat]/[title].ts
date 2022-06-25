@@ -1,13 +1,14 @@
 import { supabaseServerClient } from '@supabase/auth-helpers-sveltekit';
 
-import { greenhouse } from "$lib/assets/products/greenhouse";
+import type { greenhouse } from '$lib/assets/products/d.greenhouse';
 
 export async function get({request, url}) {
-    let { data: product, error } = await supabaseServerClient(request)
+    let { data: product, error} = await supabaseServerClient(request)
     .from('product')
     .select('*')
     .eq('id',parseInt(url.searchParams.get('id')))
-
+    console.log(product);
+    
     return {
         status: 200,
         headers: {

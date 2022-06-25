@@ -6,7 +6,6 @@ export async function get({ request, params }) {
     let { data: products, error } = await supabaseServerClient(request)
         .rpc('getproductsbycategory3', { p_category: strain })
 
-
     products = products.map(item => {
         const images = item.images.substring(1).substring(-1)
         const imagesArr = images.split(",")

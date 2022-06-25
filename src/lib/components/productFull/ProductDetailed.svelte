@@ -8,20 +8,14 @@
 	import Quantity from '$lib/components/productFull/Quantity.svelte';
 	import AddToCartButton from '$lib/components/productFull/AddToCartButton.svelte';
 
-    export let imgSrc: string
-    export let imgSrc1: string
-    export let imgSrc2: string
-    export let imgSrc3: string
-    export let discountDeadline: any
-    export let title: string
+    export let images: string[]
+    export let expiry: any
+    export let name: string
     export let price: number
-    export let discount: number
-    export let description: string
-    export let numReviews: number;
-    export let aveReviews: number;
-    export let strain: string;
-
-	const imgSrcArray = [imgSrc, imgSrc1, imgSrc2, imgSrc3];
+    export let discount_percent: number
+    export let desc: string
+    export let sub_category: string;
+	const strain = sub_category
 
 	const deadline = new Date(discountDeadline);
 	const isSpecial = isOnSpecial(discountDeadline);
@@ -31,16 +25,16 @@
 <div class="container">
 	<main>
 		<section class="image-panel">
-			<FullImagePanel {imgSrcArray} />
+			<FullImagePanel {images} />
 		</section>
 		<section class="title">
-			<h1>{capFirstLetter(title)}</h1>
+			<h1>{capFirstLetter(name)}</h1>
 		</section>
 		<section class="description">
 			{description}
 		</section>
 		<section class="price">
-			<Price {isSpecial} price={price} discount={discount} />
+			<Price {isSpecial} price={price} discount={discount_percent} />
 		</section>
 		<section class="quantity-and-cart">
 			<div class="quantity">
