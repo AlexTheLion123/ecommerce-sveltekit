@@ -3,7 +3,7 @@
 
 	import Icon from './Icon.svelte';
 
-	export let imgSrcArray: string[];
+	export let images: string[];
 
 	let current = 0;
 
@@ -15,14 +15,14 @@
 </script>
 
 <main>
-	{#each imgSrcArray as imgSrc, i}
+	{#each images as src, i}
 		{#if i === 0}
 			<div class="icon" on:click={() => handleClick(i)} class:selected={current === i}>
-				<Icon {imgSrc} />
+				<Icon {src} />
 			</div>
 		{:else}
 			<div class="icon" on:click={() => handleClick(i)} class:selected={current === i}>
-				<Icon {imgSrc} />
+				<Icon {src} />
 			</div>
 		{/if}
 	{/each}

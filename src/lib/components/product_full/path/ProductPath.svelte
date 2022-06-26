@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 
 	import PathItem from './PathItem.svelte';
 
-	export let path: string[];
+	const path = $page.url.pathname.split('/');
 
 	function pathClick(event) {
 		let gotoPath: string;

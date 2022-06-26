@@ -1,25 +1,23 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { capFirstLetter } from '$lib/scripts/utils';
 	import { isOnSpecial } from '$lib/scripts/utils';
 
-	import FullImagePanel from '$lib/components/productFull/images/FullImagePanel.svelte';
-	import Price from '$lib/components/productFull/Price.svelte';
-	import Quantity from '$lib/components/productFull/Quantity.svelte';
-	import AddToCartButton from '$lib/components/productFull/AddToCartButton.svelte';
+	import FullImagePanel from './image_panel/FullImagePanel.svelte';
+	import Price from './Price.svelte';
+	import Quantity from './Quantity.svelte';
+	import AddToCartButton from './AddToCartButton.svelte';
 
-    export let images: string[]
-    export let expiry: any
-    export let name: string
-    export let price: number
-    export let discount_percent: number
-    export let desc: string
-    export let sub_category: string;
-	const strain = sub_category
+	export let images: string[];
+	export let discount_expiry: number | null;
+	export let name: string;
+	export let price: number;
+	export let discount_percent: number | null;
+	export let description: string;
+	export let sub_category: string;
+	export let average_rating: number | null;
+	export let num_reviews: number;
 
-	const deadline = new Date(discountDeadline);
-	const isSpecial = isOnSpecial(discountDeadline);
-
+	const isSpecial = new Date() < new Date(discount_expiry);
 </script>
 
 <div class="container">
@@ -34,7 +32,7 @@
 			{description}
 		</section>
 		<section class="price">
-			<Price {isSpecial} price={price} discount={discount_percent} />
+			<Price {isSpecial} {price} discount={discount_percent} />
 		</section>
 		<section class="quantity-and-cart">
 			<div class="quantity">
@@ -47,9 +45,19 @@
 	</main>
 </div>
 
+<div>
+	num reviews: {num_reviews}
+</div>
+<div>
+	average rating: {average_rating}
+</div>
+<div>
+	strain: {sub_category}
+</div>
+
 <style>
 	.container {
-        max-width: 1000px;
+		max-width: 1000px;
 	}
 
 	header {
@@ -66,7 +74,7 @@
 			'images price' 2rem
 			'images quantCart' 3rem
 			/ 1fr minmax(auto, 500px);
-			
+
 		grid-row-gap: 1rem;
 		grid-column-gap: 2rem;
 	}
@@ -90,9 +98,8 @@
 	}
 
 	.quantity-and-cart {
-		 display: grid;
-		 grid-template-columns: minmax(auto, 8rem) 1fr;
-		 grid-column-gap: 1rem;
+		display: grid;
+		grid-template-columns: minmax(auto, 8rem) 1fr;
+		grid-column-gap: 1rem;
 	}
-
 </style>

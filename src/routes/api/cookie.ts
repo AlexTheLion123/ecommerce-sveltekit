@@ -5,7 +5,7 @@ export async function del() {
     return {
         status: 204,
         headers: {
-            'set-cookie': ['sb-refresh-token=/; Path=/', 'sb-provider-token=/; Path=/', 'sb-access-token=/; Path=/']
+            'set-cookie': ['sb-refresh-token=/; path=/', 'sb-provider-token=/; path=/', 'sb-access-token=/; path=/']
         }
     }
 }

@@ -7,8 +7,8 @@
 
 	import Price from './Price.svelte';
 	import Timer from './Timer.svelte';
-	import ModalWithSlot from '$lib/components/ModalWithSlot.svelte';
-	import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
+	// import ModalWithSlot from '$lib/components/ModalWithSlot.svelte';
+	// import ProductDetailed from '$lib/components/productFull/ProductDetailed.svelte';
 
 	export let name: string;
 	export let discount_expiry: number;
@@ -20,9 +20,9 @@
 	export let img_src: string;
 	export let id: string;
 
-	let showModal = false;
+	//let showModal = false;
 	let isSpecial;
-	let expiry: Date;
+	let expiry: Date | null;
 
 	if(discount_percent && discount_expiry)  {
 		expiry = new Date(discount_expiry);
@@ -36,11 +36,11 @@
 		//showModal = true;
 	}
 
-	$: if (browser && showModal) {
-		history.pushState({}, null, `${$page.url.pathname}/${name.toLowerCase()}`);
-	} else if (browser && !showModal) {
-		history.pushState({}, null, `${$page.url.pathname}`);
-	}
+	// $: if (browser && showModal) {
+	// 	history.pushState({}, null, `${$page.url.pathname}/${name.toLowerCase()}`);
+	// } else if (browser && !showModal) {
+	// 	history.pushState({}, null, `${$page.url.pathname}`);
+	// }
 </script>
 
 <!-- <ModalWithSlot bind:showModal>

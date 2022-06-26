@@ -1,13 +1,12 @@
 import { supabaseServerClient } from '@supabase/auth-helpers-sveltekit';
 
-import type { greenhouse } from '$lib/assets/products/d.greenhouse';
-
-export async function get({request, url}) {
-    let { data: product, error} = await supabaseServerClient(request)
-    .from('product')
-    .select('*')
-    .eq('id',parseInt(url.searchParams.get('id')))
-    console.log(product);
+export async function get({ request, url }) {
+    let { data, error } = await supabaseServerClient(request)
+        .rpc('getproductbyid', { p_id: url.searchParams.get('id') })
+    
+    const product = data[0]
+    const images = product.images.substring(1).substring(-1)
+    product.images = images.split(",")
     
     return {
         status: 200,

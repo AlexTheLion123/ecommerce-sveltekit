@@ -1,9 +1,9 @@
 <script>
-	export let imgSrc;
+	export let src;
 	
 </script>
 
-	<img src={imgSrc} alt="" />
+	<img {src} alt="" />
 
 <style>
 

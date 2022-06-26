@@ -4,7 +4,6 @@
 	import Product from '$lib/components/product/Product.svelte';
 	import SearchBar from '$lib/components/layout/SearchBar.svelte';
 	import Filters from '$lib/components/filter/Filters.svelte';
-	import { page } from '$app/stores';
 
 	type Products = greenhouse & { img_src: string };
 
