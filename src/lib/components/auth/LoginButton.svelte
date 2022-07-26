@@ -1,10 +1,11 @@
 <script>
 	import { session } from '$app/stores';
 	import { goto } from '$app/navigation';
+import { assign } from 'svelte/internal';
 
 </script>
 
-<button on:click={() => goto('login')}>
+<button on:click={() => window.location.assign('http://localhost:3000/login')}>
 	{#if $session?.user}
 		{$session.user.email}<br />
 	{:else}
